@@ -10,3 +10,5 @@ There will be a main build located in the main-build folder. This will be period
 You should only be adding scenes into YOUR folder. Do NOT delete assests until checking with everyone that it is ok to delete.
 
 There are multiple .txt files under different folders, please read them and pay attention! They explain the folders purpose / something important.
+
+## ALWAYS PULL FROM GITHUB BEFORE YOU START WORKING. THIS IT TO AVOID MERGE ISSUES. IF YOU ARE PRESENTED WITH A MERGE ISSUE TALK TO ELIJAH, AND I WILL FIGURE OUT WHICH ONE IS RIGHT TO MERGE.
