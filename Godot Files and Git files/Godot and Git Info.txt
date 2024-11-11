@@ -1,0 +1,4 @@
+Leave .gitignore and .gitattributes alone, ive config'd them. 
+When uploading me and ben should be on call making sure the .godot is properly transferred. 
+For now the .godot is from a blank project. 
+The file contains stuff about the godot version and assets needed. 
