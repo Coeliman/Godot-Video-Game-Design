@@ -11,4 +11,15 @@ You should only be adding scenes into YOUR folder. Do NOT delete assests until c
 
 There are multiple .txt files under different folders, please read them and pay attention! They explain the folders purpose / something important.
 
-## ALWAYS PULL FROM GITHUB BEFORE YOU START WORKING. THIS IT TO AVOID MERGE ISSUES. IF YOU ARE PRESENTED WITH A MERGE ISSUE TALK TO ELIJAH, AND I WILL FIGURE OUT WHICH ONE IS RIGHT TO MERGE.
+**ALWAYS PULL FROM GITHUB BEFORE YOU START WORKING. THIS IT TO AVOID MERGE ISSUES. IF YOU ARE PRESENTED WITH A MERGE ISSUE TALK TO ELIJAH, AND I WILL FIGURE OUT WHICH ONE IS RIGHT TO MERGE.**
+
+### Github tutorial
+Whenever you start the project, use the software you are using (Github Desktop or GitKraken) to pull all new updates from the cloud.
+
+There are two different "upload" things, commit and push.
+
+Committing is just writing a message and uploading the files you have selected into the queue.
+
+Pushing is taking all the files you have put into the queue and sending them to be uploaded to the server, and this webpage. 
+
+You should try to commit somewhat frequently, but only push and pull when you are starting / finishing work for the day/session.
