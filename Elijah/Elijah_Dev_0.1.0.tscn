@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=3 uid="uid://djdu7o5jl2ygp"]
+
+[ext_resource type="Script" path="res://!!Assets/Scripts/DistanceLimit.gd" id="1_6n7i1"]
+[ext_resource type="Texture2D" uid="uid://b54qvjfy8lmds" path="res://!!Assets/Sprites/Astro_2.png" id="1_hawec"]
+[ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_h1njx"]
+[ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="3_gi33d"]
+[ext_resource type="PackedScene" uid="uid://b8jr80knj3i7d" path="res://!!Assets/Characters/test_character_2.tscn" id="4_7lbn0"]
+[ext_resource type="PackedScene" uid="uid://1djrxwu6o2x1" path="res://Ben/Rope_segment.tscn" id="5_fjie2"]
+[ext_resource type="PackedScene" uid="uid://48r7i67ybude" path="res://!!Assets/Characters/Test_charater.tscn" id="6_xo3en"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
+shader = ExtResource("2_h1njx")
+shader_parameter/pixel_range = 4.0
+
+[sub_resource type="Environment" id="Environment_w0ntq"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_fw51a"]
+script/source = "using Godot;
+using System;
+
+public partial class Ambient_Properties : WorldEnvironment
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+	
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1hn2"]
+shader = ExtResource("3_gi33d")
+shader_parameter/dim = 0.5
+
+[sub_resource type="GDScript" id="GDScript_mdtpd"]
+script/source = "extends CanvasModulate
+func _ready() -> void:
+	pass
+func _process(delta: float) -> void:
+	pass"
+
+[node name="World-1" type="Node2D"]
+script = ExtResource("1_6n7i1")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(88, 98)
+scale = Vector2(0.0827636, 0.0930175)
+texture = ExtResource("1_hawec")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pixelate" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_b8irb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w0ntq")
+script = SubResource("CSharpScript_fw51a")
+
+[node name="Dim" type="CanvasModulate" parent="WorldEnvironment"]
+visible = false
+material = SubResource("ShaderMaterial_i1hn2")
+scale = Vector2(1e-05, 1e-05)
+color = Color(1, 0.802515, 0.516336, 1)
+script = SubResource("GDScript_mdtpd")
+
+[node name="Test_Character_2" parent="." instance=ExtResource("4_7lbn0")]
+z_index = 2
+position = Vector2(232, 266)
+
+[node name="Test_Character_2_Node" type="Node" parent="Test_Character_2"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Loc1" type="PinJoint2D" parent="Node"]
+position = Vector2(232, 266)
+node_a = NodePath("../../Test_Character_2")
+node_b = NodePath("../Rope_Segment")
+bias = 0.9
+
+[node name="Rope_Segment" parent="Node" instance=ExtResource("5_fjie2")]
+position = Vector2(274, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Node"]
+position = Vector2(316, 266)
+node_a = NodePath("../Rope_Segment")
+node_b = NodePath("../Rope_Segment2")
+bias = 0.9
+
+[node name="Rope_Segment2" parent="Node" instance=ExtResource("5_fjie2")]
+position = Vector2(358, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="Node"]
+position = Vector2(400, 266)
+node_a = NodePath("../Rope_Segment2")
+node_b = NodePath("../Rope_Segment3")
+bias = 0.9
+
+[node name="Rope_Segment3" parent="Node" instance=ExtResource("5_fjie2")]
+position = Vector2(442, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="Node"]
+position = Vector2(484, 266)
+node_a = NodePath("../Rope_Segment3")
+node_b = NodePath("../Rope_Segment4")
+bias = 0.9
+
+[node name="Rope_Segment4" parent="Node" instance=ExtResource("5_fjie2")]
+position = Vector2(526, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="Node"]
+position = Vector2(568, 266)
+node_a = NodePath("../Rope_Segment4")
+node_b = NodePath("../Rope_Segment5")
+bias = 0.9
+
+[node name="Rope_Segment5" parent="Node" instance=ExtResource("5_fjie2")]
+position = Vector2(610, 266)
+rotation = 1.5708
+
+[node name="Loc2" type="PinJoint2D" parent="Node"]
+position = Vector2(653, 267)
+node_a = NodePath("../Rope_Segment5")
+node_b = NodePath("../../Test_Character")
+bias = 0.9
+
+[node name="Test_Character" parent="." instance=ExtResource("6_xo3en")]
+z_index = 2
+position = Vector2(653, 267)
+
+[node name="Test_Character_Node" type="Node" parent="Test_Character"]
