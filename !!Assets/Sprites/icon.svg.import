@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dthrxhsuncexx"
-path="res://.godot/imported/Astro.png-3eddf5b67379e153ce93c77ab58e5074.ctex"
+uid="uid://bcw31lw6y4a1v"
+path="res://.godot/imported/icon.svg-e59842232bcbf98a2ea4c61045bf5af3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Astro.png"
-dest_files=["res://.godot/imported/Astro.png-3eddf5b67379e153ce93c77ab58e5074.ctex"]
+source_file="res://!!Assets/Sprites/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-e59842232bcbf98a2ea4c61045bf5af3.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

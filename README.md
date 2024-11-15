@@ -11,8 +11,6 @@ You should only be adding scenes into YOUR folder. Do NOT delete assests until c
 
 There are multiple .txt files under different folders, please read them and pay attention! They explain the folders purpose / something important.
 
-Commit all .import files btw
-
 **ALWAYS PULL FROM GITHUB BEFORE YOU START WORKING. THIS IT TO AVOID MERGE ISSUES. IF YOU ARE PRESENTED WITH A MERGE ISSUE TALK TO ELIJAH, AND I WILL FIGURE OUT WHICH ONE IS RIGHT TO MERGE.**
 
 ### Github tutorial
@@ -26,3 +24,5 @@ Pushing is taking all the files you have put into the queue and sending them to 
 
 You should try to commit somewhat frequently, but only push and pull when you are starting / finishing work for the day/session.
 
+
+# Commit all csproj,sln,import files, do not commit .vs folder or .godot folder

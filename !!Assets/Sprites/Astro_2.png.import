@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd0hb1giiyufl"
-path="res://.godot/imported/processed-9FDF1343-8A36-43E9-8192-B8448CC0EE77.jpeg-1190d4c33fe67dc013ab60ed146ef1fd.ctex"
+uid="uid://b54qvjfy8lmds"
+path="res://.godot/imported/Astro_2.png-d1a9c62e22a149e4b0ff729dcb0c7f3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://processed-9FDF1343-8A36-43E9-8192-B8448CC0EE77.jpeg"
-dest_files=["res://.godot/imported/processed-9FDF1343-8A36-43E9-8192-B8448CC0EE77.jpeg-1190d4c33fe67dc013ab60ed146ef1fd.ctex"]
+source_file="res://!!Assets/Sprites/Astro_2.png"
+dest_files=["res://.godot/imported/Astro_2.png-d1a9c62e22a149e4b0ff729dcb0c7f3e.ctex"]
 
 [params]
 

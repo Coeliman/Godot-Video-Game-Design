@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cw4hbkthuqqvt"]
 
-[ext_resource type="PackedScene" uid="uid://1djrxwu6o2x1" path="res://Rope_segment.tscn" id="1_tix81"]
+[ext_resource type="PackedScene" uid="uid://1djrxwu6o2x1" path="res://Ben/Rope_segment.tscn" id="1_tix81"]
 
 [node name="Rope" type="Node2D"]
 
