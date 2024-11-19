@@ -1,3 +1,0 @@
-This text file is so that you can see your folders on Github. 
-
-This may be deleted after you have committeed your first scene to this folder.

@@ -1,7 +1,0 @@
-This is where builds and past builds will be located. 
-
-The current main build will be labeled
-!!!1.0.4 (or the respective version)
-
-Please be reasonable with names, demo stuff will be labeled 0.0.1, 0.0.2, 0.1.0, etc like minecraft.
-When the first real game threshold is it we will update it to 1.0.0
