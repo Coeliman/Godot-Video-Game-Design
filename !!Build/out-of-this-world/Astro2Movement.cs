@@ -44,7 +44,6 @@ public partial class Astro2Movement : CharacterBody2D
 				}
 			}
 		}
-
 		Velocity = velocity;
 		//MoveAndSlide();
 	}

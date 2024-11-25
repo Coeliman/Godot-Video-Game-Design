@@ -1,1 +1,0 @@
-This is the main build for the project, only add complete and final assets to this project.

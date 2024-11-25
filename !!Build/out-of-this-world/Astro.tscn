@@ -23,6 +23,7 @@ script = ExtResource("1_srj1f")
 [node name="Polygons" type="Node2D" parent="Skeleton"]
 
 [node name="Torso" type="Polygon2D" parent="Skeleton/Polygons"]
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("2_q88tx")
 skeleton = NodePath("../../Bones")
@@ -32,6 +33,7 @@ bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 
 [node name="Right_Arm" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("3_ulj38")
 skeleton = NodePath("../../Bones")
@@ -41,6 +43,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0), "Pelvis/C
 
 [node name="Left_Arm" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("4_amtwt")
 skeleton = NodePath("../../Bones")
@@ -50,6 +53,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Che
 
 [node name="Right_Hand" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -2
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(1100, -800)
 texture = ExtResource("5_sqd0o")
 texture_rotation = -1.5708
@@ -60,6 +64,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "P
 
 [node name="Left_Hand" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -2
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1100, -790)
 texture = ExtResource("6_wf5h2")
 skeleton = NodePath("../../Bones")
@@ -69,6 +74,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/
 
 [node name="Right_Thigh" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -2
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("7_behih")
 skeleton = NodePath("../../Bones")
@@ -78,6 +84,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", P
 
 [node name="Left_Thigh" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("8_ofl51")
 skeleton = NodePath("../../Bones")
@@ -87,6 +94,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Che
 
 [node name="Right_Foot" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("9_thuju")
 skeleton = NodePath("../../Bones")
@@ -95,6 +103,7 @@ uv = PackedVector2Array(1018.31, 1826.13, 1018.31, 1735.11, 991.763, 1348.27, 10
 bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip/Left_Knee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip/Right_Knee", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
 
 [node name="Left_Foot" type="Polygon2D" parent="Skeleton/Polygons"]
+color = Color(0.784314, 0.882353, 1, 1)
 offset = Vector2(-1000, -800)
 texture = ExtResource("10_qmap6")
 skeleton = NodePath("../../Bones")
@@ -103,7 +112,7 @@ uv = PackedVector2Array(701.629, 1814.76, 714.904, 1718.04, 737.659, 1678.22, 73
 bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip/Left_Knee", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/Right_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip/Right_Knee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Bones" type="Skeleton2D" parent="Skeleton"]
-rotation = -0.00193102
+rotation = 0.0165309
 
 [node name="Pelvis" type="Bone2D" parent="Skeleton/Bones"]
 position = Vector2(0, 80)

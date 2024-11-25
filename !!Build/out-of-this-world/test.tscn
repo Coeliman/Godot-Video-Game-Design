@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2i1m6hircnw4"]
+[gd_scene load_steps=8 format=3 uid="uid://c2i1m6hircnw4"]
 
+[ext_resource type="Script" path="res://DistanceLimit.gd" id="1_6vahs"]
 [ext_resource type="PackedScene" uid="uid://b8jr80knj3i7d" path="res://Astro.tscn" id="1_1231e"]
 [ext_resource type="Shader" path="res://Pixelation.gdshader" id="1_aj1qq"]
 [ext_resource type="PackedScene" uid="uid://48r7i67ybude" path="res://Astro_2.tscn" id="2_2hwc8"]
@@ -14,13 +15,14 @@ shader = ExtResource("3_4s2k2")
 shader_parameter/dim = 0.5
 
 [node name="Test" type="Node"]
+script = ExtResource("1_6vahs")
 
-[node name="Test_Character_2" parent="." instance=ExtResource("1_1231e")]
+[node name="Astro" parent="." instance=ExtResource("1_1231e")]
 position = Vector2(351, 237)
 scale = Vector2(0.25, 0.25)
 
-[node name="Test_Character" parent="." instance=ExtResource("2_2hwc8")]
-position = Vector2(908, 240)
+[node name="Astro_2" parent="." instance=ExtResource("2_2hwc8")]
+position = Vector2(600, 240)
 scale = Vector2(0.25, 0.25)
 
 [node name="Post_Process" type="CanvasLayer" parent="."]
@@ -37,4 +39,4 @@ grow_vertical = 2
 
 [node name="Dimmer" type="CanvasModulate" parent="Lighting_Enviorment"]
 material = SubResource("ShaderMaterial_qyr0q")
-color = Color(0.854902, 0.772549, 0.929412, 1)
+color = Color(1, 0.913725, 0.854902, 1)
