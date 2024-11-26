@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt1uk5puhe6is"
-path="res://.godot/imported/Left_Thigh.png-f1d8010bb373eaf1ee435aab8430e1da.ctex"
+path="res://.godot/imported/Left_Thigh.png-2291a5c7ac6638038cdbbed148e18aea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Left_Thigh.png"
-dest_files=["res://.godot/imported/Left_Thigh.png-f1d8010bb373eaf1ee435aab8430e1da.ctex"]
+source_file="res://!!Assets/Sprites/Astro/Left_Thigh.png"
+dest_files=["res://.godot/imported/Left_Thigh.png-2291a5c7ac6638038cdbbed148e18aea.ctex"]
 
 [params]
 

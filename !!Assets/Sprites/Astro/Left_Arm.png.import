@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8nj3lins63b0"
-path="res://.godot/imported/Left_Arm.png-7da22bdde9421b89e0430d9aa1576909.ctex"
+path="res://.godot/imported/Left_Arm.png-90400685a15aa484fc43f1b71c014c6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Left_Arm.png"
-dest_files=["res://.godot/imported/Left_Arm.png-7da22bdde9421b89e0430d9aa1576909.ctex"]
+source_file="res://!!Assets/Sprites/Astro/Left_Arm.png"
+dest_files=["res://.godot/imported/Left_Arm.png-90400685a15aa484fc43f1b71c014c6e.ctex"]
 
 [params]
 

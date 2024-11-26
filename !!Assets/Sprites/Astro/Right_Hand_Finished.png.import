@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b06ai071e5ke1"
-path="res://.godot/imported/Right_Hand_Finished.png-c73cad7b73371a695ddb5d93226a1d6a.ctex"
+path="res://.godot/imported/Right_Hand_Finished.png-7b9e1639a160361565768928c28122ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Right_Hand_Finished.png"
-dest_files=["res://.godot/imported/Right_Hand_Finished.png-c73cad7b73371a695ddb5d93226a1d6a.ctex"]
+source_file="res://!!Assets/Sprites/Astro/Right_Hand_Finished.png"
+dest_files=["res://.godot/imported/Right_Hand_Finished.png-7b9e1639a160361565768928c28122ea.ctex"]
 
 [params]
 
