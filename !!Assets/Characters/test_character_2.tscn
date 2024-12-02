@@ -25,6 +25,7 @@ script = ExtResource("1_a3kbw")
 [node name="Skeleton" type="Node2D" parent="."]
 
 [node name="Polygons" type="Node2D" parent="Skeleton"]
+z_index = 10
 
 [node name="Torso" type="Polygon2D" parent="Skeleton/Polygons"]
 offset = Vector2(-1000, -800)

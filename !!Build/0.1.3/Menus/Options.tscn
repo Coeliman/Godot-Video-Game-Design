@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjslacghqcbl3"]
+[gd_scene load_steps=4 format=3 uid="uid://bjslacghqcbl3"]
 
+[ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_kqea8"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/options.gd" id="1_l28e4"]
+[ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="2_xt7p7"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -9,37 +11,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_kqea8")
 script = ExtResource("1_l28e4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.513
-anchor_top = 0.132
-anchor_right = 0.513
-anchor_bottom = 0.132
-offset_left = -201.976
-offset_top = -15.536
-offset_right = 201.024
-offset_bottom = 15.464
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Button | CLICK TO CLOSE OPTIONS SCENE
-"
-
 [node name="2 players" type="VBoxContainer" parent="."]
+z_index = 5
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -15.0
-offset_right = 87.0
-offset_bottom = 16.0
+offset_left = 385.0
+offset_top = -20.0
+offset_right = 487.0
+offset_bottom = 11.0
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="2 players"]
@@ -47,15 +31,16 @@ layout_mode = 2
 text = "2 players"
 
 [node name="3 players" type="VBoxContainer" parent="."]
+z_index = 5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
+offset_left = -47.0
 offset_top = -20.0
-offset_right = 39.0
+offset_right = 53.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -65,14 +50,16 @@ layout_mode = 2
 text = "3 players"
 
 [node name="4 players" type="VBoxContainer" parent="."]
+z_index = 5
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -78.0
+offset_left = -487.0
 offset_top = -20.0
+offset_right = -384.0
 offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -81,7 +68,33 @@ grow_vertical = 2
 layout_mode = 2
 text = "4 players"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer2"]
+position = Vector2(576, 324)
+scale = Vector2(2, 1.8)
+texture = ExtResource("2_xt7p7")
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.5
+offset_top = -27.0
+offset_right = 52.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
 [connection signal="pressed" from="2 players/Button" to="." method="_2player_pressed"]
 [connection signal="pressed" from="3 players/Button" to="." method="_3player_pressed"]
 [connection signal="pressed" from="4 players/Button" to="." method="_4player_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_button_pressed"]

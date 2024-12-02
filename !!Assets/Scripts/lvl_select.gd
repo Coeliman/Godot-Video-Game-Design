@@ -9,3 +9,7 @@ func platformer_pressed() -> void:
 
 func zerog_pressed() -> void:
 	get_tree().change_scene_to_file("res://!!Build/0.1.3/Levels/Lvl 1.tscn")
+
+
+func _close_pressed() -> void:
+	queue_free()

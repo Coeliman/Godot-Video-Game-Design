@@ -1,40 +1,92 @@
-[gd_scene load_steps=2 format=3 uid="uid://7jgd3o14ato1"]
+[gd_scene load_steps=4 format=3 uid="uid://7jgd3o14ato1"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/lvl_select.gd" id="1_d4flp"]
+[ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_s4bnf"]
+[ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="2_6p8uh"]
 
 [node name="lvl select" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_s4bnf")
 script = ExtResource("1_d4flp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-offset_right = 299.0
-offset_bottom = 39.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(576, 321)
+scale = Vector2(2, 1.8)
+texture = ExtResource("2_6p8uh")
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -15.0
+offset_right = 500.0
+offset_bottom = 16.0
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Platformer Physics
 "
+expand_icon = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="Button2" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = -334.0
-offset_bottom = 38.0
+anchor_bottom = 0.5
+offset_left = -453.0
+offset_top = -15.0
+offset_right = -300.0
+offset_bottom = 16.0
 grow_horizontal = 0
-
-[node name="Button" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+grow_vertical = 2
 text = "Floating Physics"
+expand_icon = true
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="platformer_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Button" to="." method="zerog_pressed"]
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -15.0
+offset_right = -290.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Floating Physics"
+expand_icon = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.5
+offset_top = -27.0
+offset_right = 45.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="platformer_pressed"]
+[connection signal="pressed" from="Button2" to="." method="zerog_pressed"]
+[connection signal="pressed" from="Button3" to="." method="zerog_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_close_pressed"]

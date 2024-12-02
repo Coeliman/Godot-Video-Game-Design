@@ -21,6 +21,7 @@ script = ExtResource("1_eepbl")
 [node name="Skeleton" type="Node2D" parent="."]
 
 [node name="Polygons" type="Node2D" parent="Skeleton"]
+z_index = 10
 
 [node name="Torso" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = 3

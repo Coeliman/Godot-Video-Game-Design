@@ -44,7 +44,7 @@ script = ExtResource("1_idqyl")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="ParallaxBackground"]
-scale = Vector2(1.12891, 1.07167)
+scale = Vector2(1.125, 1.08)
 texture = ExtResource("2_klo27")
 centered = false
 
