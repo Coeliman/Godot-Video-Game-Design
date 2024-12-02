@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8jr80knj3i7d"]
+[gd_scene load_steps=13 format=3 uid="uid://b8jr80knj3i7d"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/TestCharacter2_2.cs" id="1_a3kbw"]
 [ext_resource type="Texture2D" uid="uid://dtr3pdowv7eck" path="res://!!Assets/Sprites/Astro/Torso.png" id="2_q88tx"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dt1uk5puhe6is" path="res://!!Assets/Sprites/Astro/Left_Thigh.png" id="8_ofl51"]
 [ext_resource type="Texture2D" uid="uid://dpjwypmuyt52q" path="res://!!Assets/Sprites/Astro/Right_Leg_Unfinished.png" id="9_thuju"]
 [ext_resource type="Texture2D" uid="uid://chnqybehdvwlp" path="res://!!Assets/Sprites/Astro/Left_Leg_Unfinished.png" id="10_qmap6"]
+[ext_resource type="Shader" path="res://!!Assets/Shaders/Color_Change.gdshader" id="11_ouaw5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icuhe"]
+shader = ExtResource("11_ouaw5")
 
 [node name="Test_Character_2" type="CharacterBody2D"]
 z_index = 2
@@ -156,3 +160,11 @@ rest = Transform2D(1, 0, 0, 1, 36, 363)
 auto_calculate_length_and_angle = false
 length = 350.0
 bone_angle = 90.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_icuhe")
+offset_right = 178.0
+offset_bottom = 182.0

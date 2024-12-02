@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dakf200jyd5i8"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_idqyl"]
-[ext_resource type="Texture2D" uid="uid://b54qvjfy8lmds" path="res://!!Assets/Sprites/Astro_2.png" id="2_mpyed"]
+[ext_resource type="Texture2D" uid="uid://0tutrhjhjwse" path="res://!!Assets/Sprites/SpaceBackgroundTest.PNG" id="2_klo27"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="3_h4rgk"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="4_m3e3g"]
 [ext_resource type="PackedScene" uid="uid://b8jr80knj3i7d" path="res://!!Assets/Characters/test_character_2.tscn" id="5_l1pkf"]
@@ -41,15 +41,16 @@ shader_parameter/dim = 0.5
 [node name="World-1" type="Node2D"]
 script = ExtResource("1_idqyl")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(88, 98)
-scale = Vector2(0.0827636, 0.0930175)
-texture = ExtResource("2_mpyed")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="ParallaxBackground"]
+scale = Vector2(1.12891, 1.07167)
+texture = ExtResource("2_klo27")
+centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pixelate" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_b8irb")
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,62 +71,63 @@ script = SubResource("GDScript_mdtpd")
 
 [node name="Test_Character_2" parent="." instance=ExtResource("5_l1pkf")]
 position = Vector2(232, 266)
+scale = Vector2(0.2, 0.2)
 
 [node name="Test_Character_2_Node" type="Node" parent="Test_Character_2"]
 
-[node name="Node" type="Node" parent="."]
+[node name="Rope" type="Node" parent="."]
 
-[node name="Loc1" type="PinJoint2D" parent="Node"]
+[node name="Loc1" type="PinJoint2D" parent="Rope"]
 position = Vector2(232, 266)
 node_a = NodePath("../../Test_Character_2")
 node_b = NodePath("../Rope_Segment")
 bias = 0.9
 
-[node name="Rope_Segment" parent="Node" instance=ExtResource("6_5wlqa")]
+[node name="Rope_Segment" parent="Rope" instance=ExtResource("6_5wlqa")]
 position = Vector2(274, 266)
 rotation = 1.5708
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="Node"]
+[node name="PinJoint2D2" type="PinJoint2D" parent="Rope"]
 position = Vector2(316, 266)
 node_a = NodePath("../Rope_Segment")
 node_b = NodePath("../Rope_Segment2")
 bias = 0.9
 
-[node name="Rope_Segment2" parent="Node" instance=ExtResource("6_5wlqa")]
+[node name="Rope_Segment2" parent="Rope" instance=ExtResource("6_5wlqa")]
 position = Vector2(358, 266)
 rotation = 1.5708
 
-[node name="PinJoint2D3" type="PinJoint2D" parent="Node"]
+[node name="PinJoint2D3" type="PinJoint2D" parent="Rope"]
 position = Vector2(400, 266)
 node_a = NodePath("../Rope_Segment2")
 node_b = NodePath("../Rope_Segment3")
 bias = 0.9
 
-[node name="Rope_Segment3" parent="Node" instance=ExtResource("6_5wlqa")]
+[node name="Rope_Segment3" parent="Rope" instance=ExtResource("6_5wlqa")]
 position = Vector2(442, 266)
 rotation = 1.5708
 
-[node name="PinJoint2D4" type="PinJoint2D" parent="Node"]
+[node name="PinJoint2D4" type="PinJoint2D" parent="Rope"]
 position = Vector2(484, 266)
 node_a = NodePath("../Rope_Segment3")
 node_b = NodePath("../Rope_Segment4")
 bias = 0.9
 
-[node name="Rope_Segment4" parent="Node" instance=ExtResource("6_5wlqa")]
+[node name="Rope_Segment4" parent="Rope" instance=ExtResource("6_5wlqa")]
 position = Vector2(526, 266)
 rotation = 1.5708
 
-[node name="PinJoint2D5" type="PinJoint2D" parent="Node"]
+[node name="PinJoint2D5" type="PinJoint2D" parent="Rope"]
 position = Vector2(568, 266)
 node_a = NodePath("../Rope_Segment4")
 node_b = NodePath("../Rope_Segment5")
 bias = 0.9
 
-[node name="Rope_Segment5" parent="Node" instance=ExtResource("6_5wlqa")]
+[node name="Rope_Segment5" parent="Rope" instance=ExtResource("6_5wlqa")]
 position = Vector2(610, 266)
 rotation = 1.5708
 
-[node name="Loc2" type="PinJoint2D" parent="Node"]
+[node name="Loc2" type="PinJoint2D" parent="Rope"]
 position = Vector2(653, 267)
 node_a = NodePath("../Rope_Segment5")
 node_b = NodePath("../../Test_Character")
@@ -134,5 +136,6 @@ bias = 0.9
 [node name="Test_Character" parent="." instance=ExtResource("7_7uabb")]
 z_index = 2
 position = Vector2(653, 267)
+scale = Vector2(0.2, 0.2)
 
 [node name="Test_Character_Node" type="Node" parent="Test_Character"]
