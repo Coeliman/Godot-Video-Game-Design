@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bq756ipl4lvp2"]
 
-[ext_resource type="Script" path="res://!!Assets/Scripts/charload_plat.gd" id="1_c46bj"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/platforming_attached.gd" id="1_c46bj"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/Platformer_Engine_c1.gd" id="1_mg5ok"]
 [ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="2_hki28"]
 

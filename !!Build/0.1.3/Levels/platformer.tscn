@@ -1,11 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://pt18n3hssyki"]
+[gd_scene load_steps=4 format=3 uid="uid://pt18n3hssyki"]
 
-[ext_resource type="Script" path="res://!!Assets/Scripts/charload_plat.gd" id="1_4blu4"]
-[ext_resource type="Script" path="res://!!Assets/Scripts/Platformer_Engine_c1.gd" id="2_kjbr3"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/platforming_attached.gd" id="1_4blu4"]
 [ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="3_vd88b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h15o4"]
-size = Vector2(129, 129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdw0q"]
 size = Vector2(1152, 126)
@@ -13,17 +9,6 @@ size = Vector2(1152, 126)
 [node name="Node2D" type="Node2D"]
 position = Vector2(459, 269)
 script = ExtResource("1_4blu4")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("2_kjbr3")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(11, -81)
-texture = ExtResource("3_vd88b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(11, -83)
-shape = SubResource("RectangleShape2D_h15o4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

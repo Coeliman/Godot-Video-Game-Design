@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://db3rqo2magw74"]
 
-[ext_resource type="Script" path="res://!!Assets/Scripts/DistanceLimit.gd" id="1_732bt"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_732bt"]
 [ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="2_qvypx"]
 
 [node name="Disttest2d" type="Node2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cpt7pstov4axc"]
 
-[ext_resource type="Script" path="res://!!Assets/Scripts/DistanceLimit.gd" id="1_esahy"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_esahy"]
 [ext_resource type="Texture2D" uid="uid://b54qvjfy8lmds" path="res://!!Assets/Sprites/Astro_2.png" id="2_wlfqs"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="3_hb16t"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="4_t600y"]
