@@ -1,0 +1,3 @@
+extends Node
+# THIS SCRIPT IS ONLY FOR GLOBAL VARIABLES
+var Players = 2.0
