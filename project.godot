@@ -49,6 +49,10 @@ p2_right={
 ]
 }
 
+[physics]
+
+2d/default_gravity=300.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

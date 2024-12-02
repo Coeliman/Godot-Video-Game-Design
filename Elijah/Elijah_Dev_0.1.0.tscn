@@ -74,7 +74,6 @@ color = Color(1, 0.802515, 0.516336, 1)
 script = SubResource("GDScript_mdtpd")
 
 [node name="Test_Character_2" parent="." instance=ExtResource("4_7lbn0")]
-z_index = 2
 position = Vector2(232, 266)
 
 [node name="Test_Character_2_Node" type="Node" parent="Test_Character_2"]

@@ -7,7 +7,8 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://!!Build/0.1.2/Lvl 1.tscn")
+	var lvlslc = load("res://!!Build/0.1.2/Level Select.tscn").instantiate()
+	get_tree().current_scene.add_child(lvlslc)
 
 
 func _on_options_pressed() -> void:
