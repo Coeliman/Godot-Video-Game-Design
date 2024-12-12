@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8jr80knj3i7d"]
+[gd_scene load_steps=16 format=3 uid="uid://b8jr80knj3i7d"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/TestCharacter2_2.cs" id="1_a3kbw"]
 [ext_resource type="Texture2D" uid="uid://dtr3pdowv7eck" path="res://!!Assets/Sprites/Astro/Torso.png" id="2_q88tx"]
@@ -11,9 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://dpjwypmuyt52q" path="res://!!Assets/Sprites/Astro/Right_Leg_Unfinished.png" id="9_thuju"]
 [ext_resource type="Texture2D" uid="uid://chnqybehdvwlp" path="res://!!Assets/Sprites/Astro/Left_Leg_Unfinished.png" id="10_qmap6"]
 [ext_resource type="Shader" path="res://!!Assets/Shaders/Color_Change.gdshader" id="11_ouaw5"]
+[ext_resource type="Shader" path="res://!!Assets/Shaders/Pixelation.gdshader" id="12_eesqj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bda4e"]
+shader = ExtResource("11_ouaw5")
+shader_parameter/origin = Color(1, 1, 1, 1)
+shader_parameter/new = Color(0.69, 0.695167, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sm8fl"]
+shader = ExtResource("11_ouaw5")
+shader_parameter/origin = Color(1, 1, 1, 1)
+shader_parameter/new = Color(0.690196, 0.694118, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_icuhe"]
-shader = ExtResource("11_ouaw5")
+shader = ExtResource("12_eesqj")
+shader_parameter/pixel_range = 4.0
 
 [node name="Test_Character_2" type="CharacterBody2D"]
 z_index = 2
@@ -28,6 +40,7 @@ script = ExtResource("1_a3kbw")
 z_index = 10
 
 [node name="Torso" type="Polygon2D" parent="Skeleton/Polygons"]
+material = SubResource("ShaderMaterial_bda4e")
 offset = Vector2(-1000, -800)
 texture = ExtResource("2_q88tx")
 skeleton = NodePath("../../Bones")
@@ -37,6 +50,7 @@ bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 
 [node name="Right_Arm" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1000, -800)
 texture = ExtResource("3_ulj38")
 skeleton = NodePath("../../Bones")
@@ -46,6 +60,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0), "Pelvis/C
 
 [node name="Left_Arm" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1000, -800)
 texture = ExtResource("4_amtwt")
 skeleton = NodePath("../../Bones")
@@ -55,6 +70,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Che
 
 [node name="Right_Hand" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -2
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(1100, -800)
 texture = ExtResource("5_sqd0o")
 texture_rotation = -1.5708
@@ -65,6 +81,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "P
 
 [node name="Left_Hand" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -2
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1100, -790)
 texture = ExtResource("6_wf5h2")
 skeleton = NodePath("../../Bones")
@@ -74,6 +91,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/
 
 [node name="Right_Thigh" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -2
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1000, -800)
 texture = ExtResource("7_behih")
 skeleton = NodePath("../../Bones")
@@ -83,6 +101,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", P
 
 [node name="Left_Thigh" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1000, -800)
 texture = ExtResource("8_ofl51")
 skeleton = NodePath("../../Bones")
@@ -92,6 +111,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Che
 
 [node name="Right_Foot" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = -1
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1000, -800)
 texture = ExtResource("9_thuju")
 skeleton = NodePath("../../Bones")
@@ -100,6 +120,7 @@ uv = PackedVector2Array(1018.31, 1826.13, 1018.31, 1735.11, 991.763, 1348.27, 10
 bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip/Left_Knee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip/Right_Knee", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
 
 [node name="Left_Foot" type="Polygon2D" parent="Skeleton/Polygons"]
+material = SubResource("ShaderMaterial_sm8fl")
 offset = Vector2(-1000, -800)
 texture = ExtResource("10_qmap6")
 skeleton = NodePath("../../Bones")
@@ -163,9 +184,12 @@ length = 350.0
 bone_angle = 90.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
 material = SubResource("ShaderMaterial_icuhe")
-offset_right = 178.0
-offset_bottom = 182.0
+offset_left = -1158.0
+offset_top = -683.0
+offset_right = 1006.0
+offset_bottom = 1133.0

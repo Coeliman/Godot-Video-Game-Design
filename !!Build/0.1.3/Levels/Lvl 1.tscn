@@ -10,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
 shader = ExtResource("3_h4rgk")
-shader_parameter/pixel_range = 4.0
+shader_parameter/pixel_range = 2.0
 
 [sub_resource type="Environment" id="Environment_w0ntq"]
 

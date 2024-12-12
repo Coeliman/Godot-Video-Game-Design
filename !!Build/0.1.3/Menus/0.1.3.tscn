@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://j1c52ycm3uiy"]
+[gd_scene load_steps=6 format=3 uid="uid://j1c52ycm3uiy"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/main_menu.gd" id="1_48g3x"]
 [ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_d0vum"]
 [ext_resource type="Texture2D" uid="uid://dqqg03rflu2ap" path="res://!!Assets/Sprites/Out of this world title screen.png" id="2_vw4m8"]
+[ext_resource type="Shader" path="res://!!Assets/Shaders/Pixelation.gdshader" id="4_sdiig"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ew5bf"]
+shader = ExtResource("4_sdiig")
+shader_parameter/pixel_range = 4.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,22 +19,19 @@ grow_vertical = 2
 theme = ExtResource("1_d0vum")
 script = ExtResource("1_48g3x")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -101.0
-offset_right = -1007.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ew5bf")
+offset_right = 1152.0
+offset_bottom = 646.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 show_behind_parent = true
 z_index = -100
-position = Vector2(577, -223)
+position = Vector2(576, 324)
 scale = Vector2(2, 1.8)
 texture = ExtResource("2_vw4m8")
 
@@ -39,11 +41,14 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -168.0
-offset_right = 436.0
-offset_bottom = -63.0
+offset_left = 103.0
+offset_top = -193.0
+offset_right = 400.0
+offset_bottom = -76.0
 grow_vertical = 0
 size_flags_horizontal = 0
+theme = ExtResource("1_d0vum")
+alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
