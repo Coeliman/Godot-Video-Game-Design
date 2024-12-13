@@ -1,12 +1,13 @@
 shader_type canvas_item;
 
+uniform float range = 0.125;
 uniform vec4 origin: source_color;
 uniform vec4 new: source_color;
 
 void fragment() {
 	vec4 current_pixel = texture(TEXTURE, UV);
 	
-	if (current_pixel == origin)
+	if (current_pixel.r >= origin.r - range && current_pixel.g >= origin.g - range && current_pixel.b >= origin.b - range)
 		COLOR = new;
 	else
 		COLOR = current_pixel;
