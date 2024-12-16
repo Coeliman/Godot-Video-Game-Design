@@ -15,11 +15,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bda4e"]
 shader = ExtResource("11_ouaw5")
+shader_parameter/range = 0.125
 shader_parameter/origin = Color(1, 1, 1, 1)
 shader_parameter/new = Color(0.69, 0.695167, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sm8fl"]
 shader = ExtResource("11_ouaw5")
+shader_parameter/range = 0.125
 shader_parameter/origin = Color(1, 1, 1, 1)
 shader_parameter/new = Color(0.690196, 0.694118, 1, 1)
 
