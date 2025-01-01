@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://48r7i67ybude"]
+[gd_scene load_steps=19 format=3 uid="uid://48r7i67ybude"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/TestCharater.cs" id="1_eepbl"]
 [ext_resource type="Texture2D" uid="uid://dtr3pdowv7eck" path="res://!!Assets/Sprites/Astro/Torso.png" id="2_ifjm0"]
@@ -17,6 +17,47 @@ shader = ExtResource("2_oriy2")
 shader_parameter/range = 0.125
 shader_parameter/origin = Color(1, 1, 1, 1)
 shader_parameter/new = Color(0.92, 0.4232, 0.4232, 1)
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_dbe4s"]
+target_nodepath = NodePath("../../IKLArm")
+flip_bend_direction = true
+joint_one_bone_idx = 2
+joint_one_bone2d_node = NodePath("Pelvis/Chest/Left_Shoulder")
+joint_two_bone_idx = 3
+joint_two_bone2d_node = NodePath("Pelvis/Chest/Left_Shoulder/Left_Elbow")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_0mi5f"]
+target_nodepath = NodePath("../../IKRArm")
+joint_one_bone_idx = 4
+joint_one_bone2d_node = NodePath("Pelvis/Chest/Right_Shoulder")
+joint_two_bone_idx = 5
+joint_two_bone2d_node = NodePath("Pelvis/Chest/Right_Shoulder/Right_Elbow")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_2jksu"]
+target_nodepath = NodePath("../../IKRLeg")
+joint_one_bone_idx = 8
+joint_one_bone2d_node = NodePath("Pelvis/Right_Hip")
+joint_two_bone_idx = 9
+joint_two_bone2d_node = NodePath("Pelvis/Right_Hip/Right_Knee")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_0piv3"]
+target_nodepath = NodePath("../../IKLLeg")
+flip_bend_direction = true
+joint_one_bone_idx = 6
+joint_one_bone2d_node = NodePath("Pelvis/Left_Hip")
+joint_two_bone_idx = 7
+joint_two_bone2d_node = NodePath("Pelvis/Left_Hip/Left_Knee")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_2nxd7"]
+modification_count = 4
+modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_dbe4s")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_0mi5f")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_2jksu")
+modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_0piv3")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8kbm4"]
+radius = 4.38
+height = 33.44
 
 [node name="Test_Character" type="CharacterBody2D"]
 z_index = 3
@@ -53,6 +94,7 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0), "Pelvis/C
 [node name="Left_Arm" type="Polygon2D" parent="Skeleton/Polygons"]
 z_index = 2
 material = SubResource("ShaderMaterial_1wu0u")
+rotation = 9.71509e-05
 offset = Vector2(-1000, -800)
 texture = ExtResource("4_rqp0t")
 skeleton = NodePath("../../Bones")
@@ -123,21 +165,40 @@ bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "P
 
 [node name="Bones" type="Skeleton2D" parent="Skeleton"]
 rotation = -0.00193102
+modification_stack = SubResource("SkeletonModificationStack2D_2nxd7")
 
 [node name="Pelvis" type="Bone2D" parent="Skeleton/Bones"]
 z_index = 3
 position = Vector2(0, 80)
 rest = Transform2D(1, 0, 0, 1, 0, 80)
 
+[node name="Pelvis Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis"]
+position = Vector2(0, 3.05176e-05)
+rotation = 0.00386204
+scale = Vector2(2500, 2500)
+remote_path = NodePath("..")
+
 [node name="Chest" type="Bone2D" parent="Skeleton/Bones/Pelvis"]
 z_index = 3
 position = Vector2(0, -200)
 rest = Transform2D(1, 0, 0, 1, 0, -200)
 
+[node name="Chest Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Chest"]
+position = Vector2(-1931.02, 500196)
+rotation = 0.00772408
+scale = Vector2(6.25e+06, 6.25e+06)
+remote_path = NodePath("..")
+
 [node name="Left_Shoulder" type="Bone2D" parent="Skeleton/Bones/Pelvis/Chest"]
 z_index = 3
 position = Vector2(-173.77, 0.664223)
 rest = Transform2D(1, 0, 0, 1, -173.77, 0.664223)
+
+[node name="L  Shoulder Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Chest/Left_Shoulder"]
+position = Vector2(-3.01747e+10, 3.12536e+12)
+rotation = 0.0135171
+scale = Vector2(3.90626e+13, 3.90626e+13)
+remote_path = NodePath("..")
 
 [node name="Left_Elbow" type="Bone2D" parent="Skeleton/Bones/Pelvis/Chest/Left_Shoulder"]
 z_index = 3
@@ -147,10 +208,22 @@ auto_calculate_length_and_angle = false
 length = 300.0
 bone_angle = -190.0
 
+[node name="L Elbow Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Chest/Left_Shoulder/Left_Elbow"]
+position = Vector2(-3.01747e+17, 1.95321e+19)
+rotation = 0.0193102
+scale = Vector2(inf, inf)
+remote_path = NodePath("..")
+
 [node name="Right_Shoulder" type="Bone2D" parent="Skeleton/Bones/Pelvis/Chest"]
 z_index = 3
 position = Vector2(162.237, -2.68694)
 rest = Transform2D(1, 0, 0, 1, 162.237, -2.68694)
+
+[node name="R Shoulder Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Chest/Right_Shoulder"]
+position = Vector2(-2.59307e+24, 1.22063e+26)
+rotation = 0.0251033
+scale = Vector2(inf, inf)
+remote_path = NodePath("..")
 
 [node name="Right_Elbow" type="Bone2D" parent="Skeleton/Bones/Pelvis/Chest/Right_Shoulder"]
 z_index = 3
@@ -160,10 +233,23 @@ auto_calculate_length_and_angle = false
 length = 300.0
 bone_angle = 10.0
 
+[node name="R Elbow Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Chest/Right_Shoulder/Right_Elbow"]
+position = Vector2(-2.06259e+31, 7.62785e+32)
+rotation = 0.0308963
+scale = Vector2(inf, inf)
+remote_path = NodePath("..")
+
 [node name="Left_Hip" type="Bone2D" parent="Skeleton/Bones/Pelvis"]
 z_index = 3
 position = Vector2(-103, 138)
 rest = Transform2D(1, 0, 0, 1, -103, 138)
+
+[node name="L Hip Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Left_Hip"]
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(nan, nan)
+skew = nan
+remote_path = NodePath("..")
 
 [node name="Left_Knee" type="Bone2D" parent="Skeleton/Bones/Pelvis/Left_Hip"]
 z_index = 3
@@ -173,10 +259,24 @@ auto_calculate_length_and_angle = false
 length = 350.0
 bone_angle = 90.0
 
+[node name="L Knee Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Left_Hip/Left_Knee"]
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(nan, nan)
+skew = nan
+remote_path = NodePath("..")
+
 [node name="Right_Hip" type="Bone2D" parent="Skeleton/Bones/Pelvis"]
 z_index = 3
 position = Vector2(89, 146)
 rest = Transform2D(1, 0, 0, 1, 89, 146)
+
+[node name="R Hip Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Right_Hip"]
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(nan, nan)
+skew = nan
+remote_path = NodePath("..")
 
 [node name="Right_Knee" type="Bone2D" parent="Skeleton/Bones/Pelvis/Right_Hip"]
 position = Vector2(36, 363)
@@ -184,3 +284,28 @@ rest = Transform2D(1, 0, 0, 1, 36, 363)
 auto_calculate_length_and_angle = false
 length = 350.0
 bone_angle = 90.0
+
+[node name="R Knee Remote" type="RemoteTransform2D" parent="Skeleton/Bones/Pelvis/Right_Hip/Right_Knee"]
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(nan, nan)
+skew = nan
+remote_path = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-9, 231)
+scale = Vector2(50, 50)
+shape = SubResource("CapsuleShape2D_8kbm4")
+
+[node name="IKRArm" type="Node2D" parent="."]
+position = Vector2(789, -8)
+
+[node name="IKLArm" type="Node2D" parent="."]
+position = Vector2(-834, 4)
+
+[node name="IKRLeg" type="Node2D" parent="."]
+position = Vector2(138, 936)
+
+[node name="IKLLeg" type="Node2D" parent="."]
+position = Vector2(-141, 972)
