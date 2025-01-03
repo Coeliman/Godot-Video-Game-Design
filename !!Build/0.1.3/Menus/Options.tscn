@@ -1,13 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjslacghqcbl3"]
+[gd_scene load_steps=4 format=3 uid="uid://bjslacghqcbl3"]
 
 [ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_kqea8"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/options.gd" id="1_l28e4"]
 [ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="2_xt7p7"]
-[ext_resource type="Shader" path="res://!!Assets/Shaders/Pixelation.gdshader" id="3_sx02m"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m655j"]
-shader = ExtResource("3_sx02m")
-shader_parameter/pixel_range = 4.0
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -89,16 +84,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Close"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -100
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_m655j")
-offset_right = 1152.0
-offset_bottom = 646.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(576, 324)
 scale = Vector2(2, 1.8)
 texture = ExtResource("2_xt7p7")

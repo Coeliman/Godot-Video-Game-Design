@@ -94,9 +94,9 @@ offset_right = 1152.0
 offset_bottom = 646.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(576, 324)
+position = Vector2(576, 321)
 scale = Vector2(2, 1.8)
 texture = ExtResource("2_6p8uh")
 

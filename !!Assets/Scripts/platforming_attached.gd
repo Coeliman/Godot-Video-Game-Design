@@ -7,8 +7,8 @@ var avg_y = Vector2(0,0)
 var avg_maxx = Vector2(0,0)
 var avg_minx = Vector2(0,0)
 var avg_x = Vector2(0,0)
-var max_distance: float = 425.0
-var bounce: float = 3000.0
+var max_distance: float = 500.0
+var bounce: float = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
