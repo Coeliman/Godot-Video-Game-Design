@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://kg1bxmjfrx46"]
+
+[ext_resource type="PackedScene" uid="uid://1djrxwu6o2x1" path="res://Ben/Rope_segment.tscn" id="1_cqu1l"]
+
+[node name="Rope" type="Node2D"]
+
+[node name="CamLocS" type="PinJoint2D" parent="."]
+position = Vector2(232, 266)
+node_b = NodePath("../Rope_Segment6")
+bias = 0.9
+
+[node name="Rope_Segment6" parent="." instance=ExtResource("1_cqu1l")]
+position = Vector2(274, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="."]
+position = Vector2(316, 266)
+node_a = NodePath("../Rope_Segment6")
+node_b = NodePath("../Rope_Segment7")
+bias = 0.9
+
+[node name="Rope_Segment7" parent="." instance=ExtResource("1_cqu1l")]
+position = Vector2(358, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="."]
+position = Vector2(400, 266)
+node_a = NodePath("../Rope_Segment7")
+node_b = NodePath("../Rope_Segment8")
+bias = 0.9
+
+[node name="Rope_Segment8" parent="." instance=ExtResource("1_cqu1l")]
+position = Vector2(442, 266)
+rotation = 1.5708
+
+[node name="Camera2D" type="Camera2D" parent="Rope_Segment8"]
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="."]
+position = Vector2(484, 266)
+node_a = NodePath("../Rope_Segment8")
+node_b = NodePath("../Rope_Segment9")
+bias = 0.9
+
+[node name="Rope_Segment9" parent="." instance=ExtResource("1_cqu1l")]
+position = Vector2(526, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D9" type="PinJoint2D" parent="."]
+position = Vector2(568, 266)
+node_a = NodePath("../Rope_Segment9")
+node_b = NodePath("../Rope_Segment10")
+bias = 0.9
+
+[node name="Rope_Segment10" parent="." instance=ExtResource("1_cqu1l")]
+position = Vector2(610, 266)
+rotation = 1.5708
+
+[node name="CamLocE" type="PinJoint2D" parent="."]
+position = Vector2(653, 267)
+node_a = NodePath("../Rope_Segment10")
+bias = 0.9

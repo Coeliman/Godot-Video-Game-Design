@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dakf200jyd5i8"]
+[gd_scene load_steps=10 format=3 uid="uid://dakf200jyd5i8"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_idqyl"]
 [ext_resource type="Texture2D" uid="uid://0tutrhjhjwse" path="res://!!Assets/Sprites/SpaceBackgroundTest.PNG" id="2_klo27"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="3_h4rgk"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="4_m3e3g"]
-[ext_resource type="PackedScene" uid="uid://b8jr80knj3i7d" path="res://!!Assets/Characters/test_character_2.tscn" id="5_l1pkf"]
-[ext_resource type="PackedScene" uid="uid://1djrxwu6o2x1" path="res://Ben/Rope_segment.tscn" id="6_5wlqa"]
-[ext_resource type="PackedScene" uid="uid://48r7i67ybude" path="res://!!Assets/Characters/Test_charater.tscn" id="7_7uabb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
 shader = ExtResource("3_h4rgk")
@@ -68,74 +65,3 @@ material = SubResource("ShaderMaterial_i1hn2")
 scale = Vector2(1e-05, 1e-05)
 color = Color(1, 0.802515, 0.516336, 1)
 script = SubResource("GDScript_mdtpd")
-
-[node name="Test_Character_2" parent="." instance=ExtResource("5_l1pkf")]
-position = Vector2(232, 266)
-scale = Vector2(0.2, 0.2)
-
-[node name="Test_Character_2_Node" type="Node" parent="Test_Character_2"]
-
-[node name="Rope" type="Node" parent="."]
-
-[node name="Loc1" type="PinJoint2D" parent="Rope"]
-position = Vector2(232, 266)
-node_a = NodePath("../../Test_Character_2")
-node_b = NodePath("../Rope_Segment")
-bias = 0.9
-
-[node name="Rope_Segment" parent="Rope" instance=ExtResource("6_5wlqa")]
-position = Vector2(274, 266)
-rotation = 1.5708
-
-[node name="PinJoint2D2" type="PinJoint2D" parent="Rope"]
-position = Vector2(316, 266)
-node_a = NodePath("../Rope_Segment")
-node_b = NodePath("../Rope_Segment2")
-bias = 0.9
-
-[node name="Rope_Segment2" parent="Rope" instance=ExtResource("6_5wlqa")]
-position = Vector2(358, 266)
-rotation = 1.5708
-
-[node name="PinJoint2D3" type="PinJoint2D" parent="Rope"]
-position = Vector2(400, 266)
-node_a = NodePath("../Rope_Segment2")
-node_b = NodePath("../Rope_Segment3")
-bias = 0.9
-
-[node name="Rope_Segment3" parent="Rope" instance=ExtResource("6_5wlqa")]
-position = Vector2(442, 266)
-rotation = 1.5708
-
-[node name="PinJoint2D4" type="PinJoint2D" parent="Rope"]
-position = Vector2(484, 266)
-node_a = NodePath("../Rope_Segment3")
-node_b = NodePath("../Rope_Segment4")
-bias = 0.9
-
-[node name="Rope_Segment4" parent="Rope" instance=ExtResource("6_5wlqa")]
-position = Vector2(526, 266)
-rotation = 1.5708
-
-[node name="PinJoint2D5" type="PinJoint2D" parent="Rope"]
-position = Vector2(568, 266)
-node_a = NodePath("../Rope_Segment4")
-node_b = NodePath("../Rope_Segment5")
-bias = 0.9
-
-[node name="Rope_Segment5" parent="Rope" instance=ExtResource("6_5wlqa")]
-position = Vector2(610, 266)
-rotation = 1.5708
-
-[node name="Loc2" type="PinJoint2D" parent="Rope"]
-position = Vector2(653, 267)
-node_a = NodePath("../Rope_Segment5")
-node_b = NodePath("../../Test_Character")
-bias = 0.9
-
-[node name="Test_Character" parent="." instance=ExtResource("7_7uabb")]
-z_index = 2
-position = Vector2(653, 267)
-scale = Vector2(0.2, 0.2)
-
-[node name="Test_Character_Node" type="Node" parent="Test_Character"]

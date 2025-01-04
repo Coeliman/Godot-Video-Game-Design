@@ -1,33 +1,34 @@
 using Godot;
 using System;
 
-public partial class TestCharacter2_2 : CharacterBody2D
+public partial class TestCharacter4 : CharacterBody2D
 {
-	public const float maxSpeed = 300.0f;
-	public const float accel = 1500.0f;
+	public const float maxSpeed4 = 300.0f;
+	public const float accel4 = 1500.0f;
 	public override void _Ready()
-		{
-			// Set the scale to 0.25 of the original size
-			Scale = new Vector2(0.25f, 0.25f);
-		}
+	{
+		// Set the scale to 0.25 of the original size
+		Scale = new Vector2(0.25f, 0.25f);
+	}
 	public override void _PhysicsProcess(double delta)
+	
 	{
 
 		float v = 0.0f;
 
 		Vector2 velocity = Velocity;
 
-		Vector2 direction = Input.GetVector("p2_left", "p2_right", "p2_up", "p2_down");
+		Vector2 direction = Input.GetVector("p4_left", "p4_right", "p4_up", "p4_down");
 		if (direction != Vector2.Zero)
 		{
-			if (maxSpeed - v > accel)
+			if (maxSpeed4 - v > accel4)
 			{
-				v += accel;
+				v += accel4;
 				velocity += direction * v * (float)delta;
 			}
 			else
 			{
-				v = maxSpeed;
+				v = maxSpeed4;
 				velocity += direction * v * (float)delta;
 			}
 		}

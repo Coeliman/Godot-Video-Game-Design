@@ -265,7 +265,6 @@ rotation = 0.00193102
 [node name="L_Arm_Collision" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Left_Shoulder/ShoulderL_Kin"]
 position = Vector2(-276.029, 113.204)
 rotation = 1.48858
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_khbbp")
 
 [node name="Right_Shoulder" type="Bone2D" parent="Character Container/Bones/Pelvis/Chest"]
@@ -302,7 +301,6 @@ rotation = 0.00193102
 [node name="R_Hand_Collision" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder/Right_Elbow/ElbowR_Kin"]
 position = Vector2(172.331, 130.708)
 rotation = -1.25682
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_sh3qg")
 
 [node name="ShoulderR_Kin" type="StaticBody2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder"]
@@ -312,7 +310,6 @@ rotation = 0.00193102
 [node name="R_Arm_Collision" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder/ShoulderR_Kin"]
 position = Vector2(255.474, 106.626)
 rotation = -1.49244
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_3f1pu")
 
 [node name="Left_Hip" type="Bone2D" parent="Character Container/Bones/Pelvis"]
@@ -360,7 +357,6 @@ rotation = 0.00193102
 [node name="L_Hand_Collision" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Left_Hip/HipL_Kin"]
 position = Vector2(-33.0687, 314.429)
 rotation = -0.00193102
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_25rnw")
 
 [node name="Right_Hip" type="Bone2D" parent="Character Container/Bones/Pelvis"]
@@ -436,3 +432,5 @@ rotation = 0.00193102
 [node name="IKLLeg" type="Node2D" parent="Character Container/IK Nodes"]
 position = Vector2(-100.83, 947.807)
 rotation = 0.00193102
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
