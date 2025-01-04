@@ -8,7 +8,7 @@ var pcount = Global.Players
 
 
 func _ready() -> void:
-	#CHARACTER IMPORTS
+	##CHARACTER IMPORTS
 	
 	# loads char1 into scene
 	var p1char = load("res://!!Assets/Characters/Test_charater.tscn").instantiate()
@@ -42,7 +42,7 @@ func _ready() -> void:
 		Global.g_P4_Path = p4char.get_child(2).get_path()
 		print(p4char.get_child(2).get_path())
 		
-	# ROPE IMPORTS
+	## ROPE IMPORTS
 	# For Starting Locs (LocS/CamLocS) you must change NodeA
 	# For Ending Locks (LocE/CamLocE) you must change NodeB
 	if pcount ==2:

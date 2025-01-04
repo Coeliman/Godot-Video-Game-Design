@@ -1,0 +1,204 @@
+[gd_scene load_steps=14 format=3 uid="uid://bmxw75kaxhwci"]
+
+[ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_ru3fc"]
+[ext_resource type="Texture2D" uid="uid://0tutrhjhjwse" path="res://!!Assets/Sprites/SpaceBackgroundTest.PNG" id="2_83qnc"]
+[ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="3_7vq2t"]
+[ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="4_fhuql"]
+[ext_resource type="PackedScene" uid="uid://48r7i67ybude" path="res://!!Assets/Characters/Test_charater.tscn" id="5_u2om8"]
+[ext_resource type="PackedScene" uid="uid://b8jr80knj3i7d" path="res://!!Assets/Characters/test_character_2.tscn" id="6_mnp88"]
+[ext_resource type="PackedScene" uid="uid://1djrxwu6o2x1" path="res://Ben/Rope_segment.tscn" id="7_ef7dw"]
+[ext_resource type="PackedScene" uid="uid://buya6c5ry8ask" path="res://!!Assets/Characters/test_character_3.tscn" id="8_7mkh4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
+shader = ExtResource("3_7vq2t")
+shader_parameter/pixel_range = 2.0
+
+[sub_resource type="Environment" id="Environment_w0ntq"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_fw51a"]
+script/source = "using Godot;
+using System;
+
+public partial class Ambient_Properties : WorldEnvironment
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+	
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1hn2"]
+shader = ExtResource("4_fhuql")
+shader_parameter/dim = 0.5
+
+[sub_resource type="GDScript" id="GDScript_mdtpd"]
+
+[node name="World-1" type="Node2D"]
+script = ExtResource("1_ru3fc")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="ParallaxBackground"]
+scale = Vector2(1.125, 1.08)
+texture = ExtResource("2_83qnc")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pixelate" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_b8irb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w0ntq")
+script = SubResource("CSharpScript_fw51a")
+
+[node name="Dim" type="CanvasModulate" parent="WorldEnvironment"]
+visible = false
+material = SubResource("ShaderMaterial_i1hn2")
+scale = Vector2(1e-05, 1e-05)
+color = Color(1, 0.802515, 0.516336, 1)
+script = SubResource("GDScript_mdtpd")
+
+[node name="Test_Character" parent="." instance=ExtResource("5_u2om8")]
+position = Vector2(-420, 0)
+scale = Vector2(0.25, 0.25)
+
+[node name="Test_Character_2" parent="." instance=ExtResource("6_mnp88")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Rope" type="Node2D" parent="."]
+position = Vector2(-652, -266)
+
+[node name="CamLocS" type="PinJoint2D" parent="Rope"]
+position = Vector2(232, 266)
+node_a = NodePath("../../Test_Character")
+node_b = NodePath("../Rope_Segment6")
+bias = 0.9
+
+[node name="Rope_Segment6" parent="Rope" instance=ExtResource("7_ef7dw")]
+position = Vector2(274, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="Rope"]
+position = Vector2(316, 266)
+node_a = NodePath("../Rope_Segment6")
+node_b = NodePath("../Rope_Segment7")
+bias = 0.9
+
+[node name="Rope_Segment7" parent="Rope" instance=ExtResource("7_ef7dw")]
+position = Vector2(358, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="Rope"]
+position = Vector2(400, 266)
+node_a = NodePath("../Rope_Segment7")
+node_b = NodePath("../Rope_Segment8")
+bias = 0.9
+
+[node name="Rope_Segment8" parent="Rope" instance=ExtResource("7_ef7dw")]
+position = Vector2(442, 266)
+rotation = 1.5708
+
+[node name="Camera2D" type="Camera2D" parent="Rope/Rope_Segment8"]
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="Rope"]
+position = Vector2(484, 266)
+node_a = NodePath("../Rope_Segment8")
+node_b = NodePath("../Rope_Segment9")
+bias = 0.9
+
+[node name="Rope_Segment9" parent="Rope" instance=ExtResource("7_ef7dw")]
+position = Vector2(526, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D9" type="PinJoint2D" parent="Rope"]
+position = Vector2(568, 266)
+node_a = NodePath("../Rope_Segment9")
+node_b = NodePath("../Rope_Segment10")
+bias = 0.9
+
+[node name="Rope_Segment10" parent="Rope" instance=ExtResource("7_ef7dw")]
+position = Vector2(610, 266)
+rotation = 1.5708
+
+[node name="CamLocE" type="PinJoint2D" parent="Rope"]
+position = Vector2(653, 267)
+node_a = NodePath("../Rope_Segment10")
+node_b = NodePath("../../Test_Character_2")
+bias = 0.9
+
+[node name="Rope2" type="Node2D" parent="."]
+position = Vector2(-188, -266)
+
+[node name="CamLocS" type="PinJoint2D" parent="Rope2"]
+position = Vector2(232, 266)
+node_a = NodePath("../../Test_Character_2")
+node_b = NodePath("../Rope_Segment6")
+bias = 0.9
+
+[node name="Rope_Segment6" parent="Rope2" instance=ExtResource("7_ef7dw")]
+position = Vector2(274, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="Rope2"]
+position = Vector2(316, 266)
+node_a = NodePath("../Rope_Segment6")
+node_b = NodePath("../Rope_Segment7")
+bias = 0.9
+
+[node name="Rope_Segment7" parent="Rope2" instance=ExtResource("7_ef7dw")]
+position = Vector2(358, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="Rope2"]
+position = Vector2(400, 266)
+node_a = NodePath("../Rope_Segment7")
+node_b = NodePath("../Rope_Segment8")
+bias = 0.9
+
+[node name="Rope_Segment8" parent="Rope2" instance=ExtResource("7_ef7dw")]
+position = Vector2(442, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="Rope2"]
+position = Vector2(484, 266)
+node_a = NodePath("../Rope_Segment8")
+node_b = NodePath("../Rope_Segment9")
+bias = 0.9
+
+[node name="Rope_Segment9" parent="Rope2" instance=ExtResource("7_ef7dw")]
+position = Vector2(526, 266)
+rotation = 1.5708
+
+[node name="PinJoint2D9" type="PinJoint2D" parent="Rope2"]
+position = Vector2(568, 266)
+node_a = NodePath("../Rope_Segment9")
+node_b = NodePath("../Rope_Segment10")
+bias = 0.9
+
+[node name="Rope_Segment10" parent="Rope2" instance=ExtResource("7_ef7dw")]
+position = Vector2(610, 266)
+rotation = 1.5708
+
+[node name="CamLocE" type="PinJoint2D" parent="Rope2"]
+position = Vector2(653, 267)
+node_a = NodePath("../Rope_Segment10")
+node_b = NodePath("../../Test_Character_3")
+bias = 0.9
+
+[node name="Test_Character_3" parent="." instance=ExtResource("8_7mkh4")]
+position = Vector2(420, 0)
+scale = Vector2(0.25, 0.25)
