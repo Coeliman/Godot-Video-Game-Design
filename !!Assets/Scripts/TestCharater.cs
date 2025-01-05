@@ -7,21 +7,16 @@ public partial class TestCharater : CharacterBody2D
 	public const float accel = 1250.0f;
 
 	//Drag vars
-	private const float DragCoefficient = 0.1f;
+	private const float DragCoefficient = 0.08f;
 	private const float IKDragFactor = 20.0f;
 	private const float DragSmoothness = 0.1f;
 
 	private const float MaxIKDistance = 200.0f;
 
 	private Skeleton2D bones;
-	private Node2D rightArm;
-	private Node2D leftArm;
-	private Node2D rightLeg;
-	private Node2D leftLeg;
-	private Bone2D rightShoulder;
-	private Bone2D leftShoulder;
-	private Bone2D rightHip;
-	private Bone2D leftHip;
+	private Node2D rightArm, leftArm, rightLeg, leftLeg;
+	private Bone2D rightShoulder, leftShoulder, rightHip, leftHip;
+	private RigidBody2D t, ra, la, rh, lh, rt, lt, rf, lf;
 
 	public override void _Ready()
 	{
@@ -34,7 +29,16 @@ public partial class TestCharater : CharacterBody2D
 		leftShoulder = GetNode<Bone2D>("Character Container/Bones/Pelvis/Chest/Left_Shoulder");
 		rightHip = GetNode<Bone2D>("Character Container/Bones/Pelvis/Right_Hip");
 		leftHip = GetNode<Bone2D>("Character Container/Bones/Pelvis/Left_Hip");
-		Scale = new Vector2(0.25f,0.25f);
+		ra = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Shoulder/rigid");
+        la = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Rigid/rigid");
+        rh = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Shoulder/Right_Elbow/rigid");
+        lh = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Elbow/Left_Elbow/rigid");
+        rt = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Hip/rigid");
+        lt = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Hip/rigid");
+        rf = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Hip/Right_Knee/rigid");
+        lf = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Hip/Left_Knee/rigid");
+		t = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/rigid");
+        Scale = new Vector2(0.25f,0.25f);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -101,16 +105,6 @@ public partial class TestCharater : CharacterBody2D
 		{
 			case 0:
 				origin = rightShoulder.GlobalPosition;
-				/*
-				float angle = rightShoulder.GetBoneAngle();
-
-				float minAngle = Mathf.DegToRad(90);
-				float maxAngle = Mathf.DegToRad(270);
-
-				angle = Mathf.Clamp(angle, minAngle, maxAngle);
-
-				rightShoulder.SetBoneAngle(angle);
-				*/
 				break;
 
 			case 1:
