@@ -3,17 +3,18 @@ using System;
 
 public partial class TestCharater : CharacterBody2D
 {
-	public const float maxSpeed = 176.0f;
-	public const float accel = 1250.0f;
+	public const float maxSpeed = 150.0f;
+	public const float accel = 1200.0f;
 
 	//Drag vars
-	private const float DragCoefficient = 0.08f;
+	private const float DragCoefficient = 0.1f;
 	private const float IKDragFactor = 20.0f;
 	private const float DragSmoothness = 0.1f;
 
 	private const float MaxIKDistance = 200.0f;
+    private const float MinIKDistance = 100.0f;
 
-	private Skeleton2D bones;
+    private Skeleton2D bones;
 	private Node2D rightArm, leftArm, rightLeg, leftLeg;
 	private Bone2D rightShoulder, leftShoulder, rightHip, leftHip;
 	private RigidBody2D t, ra, la, rh, lh, rt, lt, rf, lf;
@@ -29,15 +30,6 @@ public partial class TestCharater : CharacterBody2D
 		leftShoulder = GetNode<Bone2D>("Character Container/Bones/Pelvis/Chest/Left_Shoulder");
 		rightHip = GetNode<Bone2D>("Character Container/Bones/Pelvis/Right_Hip");
 		leftHip = GetNode<Bone2D>("Character Container/Bones/Pelvis/Left_Hip");
-		ra = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Shoulder/rigid");
-        la = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Rigid/rigid");
-        rh = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Shoulder/Right_Elbow/rigid");
-        lh = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Elbow/Left_Elbow/rigid");
-        rt = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Hip/rigid");
-        lt = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Hip/rigid");
-        rf = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Right_Hip/Right_Knee/rigid");
-        lf = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/Left_Hip/Left_Knee/rigid");
-		t = GetNode<RigidBody2D>("Character Container/Bones/Pelvis/rigid");
         Scale = new Vector2(0.25f,0.25f);
 	}
 
@@ -100,33 +92,72 @@ public partial class TestCharater : CharacterBody2D
 		// Smoothly interpolate to the new position
 		Vector2 newPosition = currentPosition.Lerp(targetPosition, DragSmoothness);
 
-		Vector2 origin = GlobalPosition;
+		Bone2D bone = null;
+		int maxAngle = 0;
+        int minAngle = 0;
+
+        Vector2 origin = GlobalPosition;
 		switch (num)
 		{
 			case 0:
 				origin = rightShoulder.GlobalPosition;
-				break;
+				bone = rightShoulder;
+				maxAngle = 70;
+                minAngle = -62;
+                break;
 
 			case 1:
 				origin = leftShoulder.GlobalPosition;
-				break;
+                bone = leftShoulder;
+                maxAngle = 62;
+                minAngle = -70;
+                break;
 
 			case 2:
 				origin = rightHip.GlobalPosition;
-				break;
+                bone = rightHip;
+                maxAngle = 10;
+                minAngle = -70;
+                break;
 
 			case 3:
 				origin = leftHip.GlobalPosition;
-				break;
+                bone = leftHip;
+                maxAngle = 70;
+                minAngle = -10;
+                break;
 		}
 
 		if (newPosition.DistanceTo(origin) > MaxIKDistance)
 		{
 			newPosition = origin + (newPosition - origin).Normalized() * MaxIKDistance;
-		}
+		} else if (newPosition.DistanceTo(origin) < MinIKDistance)
+        {
+            newPosition = origin + (newPosition - origin).Normalized() * MinIKDistance;
+        }
 
-
+        if (bone.Rotation <= Mathf.DegToRad(maxAngle) && bone.Rotation >= Mathf.DegToRad(minAngle))
+		{
+            ikTarget.GlobalPosition = newPosition;
+        } else
+		{
+			switch (num)
+			{
+				case 0:
+					newPosition = newPosition + new Vector2(3.0f, 3.0f);
+					break;
+				case 1:
+                    newPosition = newPosition + new Vector2(-3.0f, 3.0f);
+                    break;
+                case 2:
+                    newPosition = newPosition + new Vector2(3.0f, 3.0f);
+                    break;
+                case 3:
+                    newPosition = newPosition + new Vector2(-3.0f, 3.0f);
+                    break;
+            }
+            ikTarget.GlobalPosition = newPosition;
+        }
 		// Update the IK target position
-		ikTarget.GlobalPosition = newPosition;
-	}
+    }
 }
