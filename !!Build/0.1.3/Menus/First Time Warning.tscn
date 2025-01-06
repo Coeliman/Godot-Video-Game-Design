@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://yxopytirnfet"]
+
+[ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_av4hh"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/First Time.gd" id="2_kpg4w"]
+[ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="3_3h31w"]
+
+[node name="First Time" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_av4hh")
+script = ExtResource("2_kpg4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(576, 324)
+scale = Vector2(2, 1.8)
+texture = ExtResource("3_3h31w")
+
+[node name="Label" type="Label" parent="."]
+z_index = -7
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.5
+offset_right = 137.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "WAIT!"
+
+[node name="Label2" type="Label" parent="."]
+z_index = -7
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.5
+offset_top = -11.5
+offset_right = 427.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "It looks to be your first time playing. Make sure to head into options to choose your keybinds and player count!"
+
+[node name="LvlSlc" type="Button" parent="."]
+z_index = -7
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+offset_top = -57.0
+offset_right = 196.0
+offset_bottom = -30.0
+grow_vertical = 0
+text = "Level Select"
+
+[node name="Options" type="Button" parent="."]
+z_index = -7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -167.0
+offset_top = -52.0
+offset_right = -101.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Options"
+
+[connection signal="pressed" from="LvlSlc" to="." method="_on_lvl_slc_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
