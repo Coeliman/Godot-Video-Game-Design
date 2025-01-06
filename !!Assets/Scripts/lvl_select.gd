@@ -4,11 +4,16 @@ extends Node
 
 
 func platformer_pressed() -> void:
-	get_tree().change_scene_to_file("res://!!Build/0.1.3/Levels/platformer.tscn")
+	queue_free()
+	# loads comic, make sure to change it to the comic scene you want
+	var Comic = load("res://!!Build/0.1.3/Menus/Comics/PlatformerComic.tscn").instantiate()
+	get_tree().current_scene.add_child(Comic)
 
 
 func zerog_pressed() -> void:
-	get_tree().change_scene_to_file("res://!!Build/0.1.3/Levels/Lvl 1.tscn")
+	queue_free()
+	var Comic = load("res://!!Build/0.1.3/Menus/Comics/Comic Example.tscn").instantiate()
+	get_tree().current_scene.add_child(Comic)
 
 
 func _close_pressed() -> void:

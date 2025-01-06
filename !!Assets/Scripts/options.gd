@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	Global.FirstTimePlaying = false
+	
 
 func _on_button_pressed() -> void:
 	queue_free()
