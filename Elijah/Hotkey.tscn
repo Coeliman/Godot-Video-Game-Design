@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c70aaxip10cdv"]
+
+[ext_resource type="Script" path="res://hotkey.gd" id="1_p145b"]
+
+[node name="Hotkey_Rebind_Button" type="Control" groups=["hotkey_button"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p145b")
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HotkeyB" type="Button" parent="Container"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+
+[node name="HotkeyL" type="Label" parent="Container/HotkeyB"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="toggled" from="Container/HotkeyB" to="." method="_on_hotkey_b_toggled"]

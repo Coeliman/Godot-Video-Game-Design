@@ -429,3 +429,5 @@ rotation = 0.00193102
 [node name="IKLLeg" type="Node2D" parent="Character Container/IK Nodes"]
 position = Vector2(-100.83, 947.807)
 rotation = 0.00193102
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]

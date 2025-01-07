@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://thy7hpjhnl7"]
+[gd_scene load_steps=5 format=3 uid="uid://thy7hpjhnl7"]
 
 [ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_mkofo"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/options.gd" id="2_fuxkd"]
 [ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="3_58rs3"]
+[ext_resource type="PackedScene" uid="uid://c70aaxip10cdv" path="res://Elijah/Hotkey.tscn" id="4_yn17k"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -21,9 +22,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 385.0
-offset_top = -20.0
+offset_top = -124.0
 offset_right = 487.0
-offset_bottom = 11.0
+offset_bottom = -93.0
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="2 players"]
@@ -39,9 +40,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -47.0
-offset_top = -20.0
+offset_top = -125.0
 offset_right = 53.0
-offset_bottom = 20.0
+offset_bottom = -85.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -58,9 +59,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -487.0
-offset_top = -20.0
+offset_top = -125.0
 offset_right = -384.0
-offset_bottom = 20.0
+offset_bottom = -85.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -89,6 +90,153 @@ z_index = -5
 position = Vector2(576, 324)
 scale = Vector2(2, 1.8)
 texture = ExtResource("3_58rs3")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 350.0
+offset_right = 250.0
+offset_bottom = 450.0
+columns = 3
+
+[node name="Spacer" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="p1_rebind_ip" parent="GridContainer" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="p1_rebind_down" parent="GridContainer" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p1_left"
+
+[node name="p1_rebind_right" parent="GridContainer" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p1_down"
+
+[node name="p1_rebind_left" parent="GridContainer" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p1_right"
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 300.0
+offset_top = 350.0
+offset_right = 450.0
+offset_bottom = 450.0
+columns = 3
+
+[node name="Spacer" type="Control" parent="GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button" parent="GridContainer2" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p2_up"
+
+[node name="Spacer2" type="Control" parent="GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button2" parent="GridContainer2" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p2_left"
+
+[node name="Hotkey_Rebind_Button3" parent="GridContainer2" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p2_down"
+
+[node name="Hotkey_Rebind_Button4" parent="GridContainer2" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p2_right"
+
+[node name="GridContainer3" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 350.0
+offset_right = 750.0
+offset_bottom = 450.0
+columns = 3
+
+[node name="Spacer" type="Control" parent="GridContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button" parent="GridContainer3" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p3_up"
+
+[node name="Spacer2" type="Control" parent="GridContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button2" parent="GridContainer3" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p3_left"
+
+[node name="Hotkey_Rebind_Button3" parent="GridContainer3" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p3_down"
+
+[node name="Hotkey_Rebind_Button4" parent="GridContainer3" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p3_right"
+
+[node name="GridContainer4" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 800.0
+offset_top = 350.0
+offset_right = 950.0
+offset_bottom = 450.0
+columns = 3
+
+[node name="Spacer" type="Control" parent="GridContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button" parent="GridContainer4" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p4_up"
+
+[node name="Spacer2" type="Control" parent="GridContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button2" parent="GridContainer4" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p4_left"
+
+[node name="Hotkey_Rebind_Button3" parent="GridContainer4" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p4_down"
+
+[node name="Hotkey_Rebind_Button4" parent="GridContainer4" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "p4_right"
 
 [connection signal="pressed" from="2 players/Button" to="." method="_2player_pressed"]
 [connection signal="pressed" from="3 players/Button" to="." method="_3player_pressed"]
