@@ -11,7 +11,7 @@ func _ready() -> void:
 	##CHARACTER IMPORTS
 	
 	# loads char1 into scene
-	var p1char = load("res://!!Assets/Characters/Test_charater.tscn").instantiate()
+	var p1char = load("res://!!Assets/Characters/astro.tscn").instantiate()
 	get_tree().current_scene.add_child(p1char)
 	p1char.global_position = Vector2(-420,0)
 	Global.g_Player1Character = p1char
@@ -19,7 +19,7 @@ func _ready() -> void:
 	#THE # IN GET_CHILD MUST ALIGN WITH WHICHEVER SPOT THE STATICBODY 2D IS IN, COUNTING AS IF ITS A LIST (SO 0,1,2,ETC)
 	print(p1char.get_child(1).get_path())
 	# loads char2 into scene
-	var p2char = load("res://!!Assets/Characters/test_character_2.tscn").instantiate()
+	var p2char = load("res://!!Assets/Characters/astro_2.tscn").instantiate()
 	get_tree().current_scene.add_child(p2char)
 	p2char.global_position = Vector2(0,0)
 	Global.g_Player2Character = p2char
@@ -27,7 +27,7 @@ func _ready() -> void:
 	print(p2char.get_child(2).get_path())
 	if pcount == 3 or pcount == 4:
 		# loads char3 into scene
-		var p3char = load("res://!!Assets/Characters/test_character_3.tscn").instantiate()
+		var p3char = load("res://!!Assets/Characters/astro_3.tscn").instantiate()
 		get_tree().current_scene.add_child(p3char)
 		p3char.global_position = Vector2(420,0)
 		Global.g_Player3Character = p3char
@@ -35,7 +35,7 @@ func _ready() -> void:
 		print(p3char.get_child(2).get_path())
 	if pcount == 4:
 		#loads char4 into scene
-		var p4char = load("res://!!Assets/Characters/test_character_4.tscn").instantiate()
+		var p4char = load("res://!!Assets/Characters/astro_4.tscn").instantiate()
 		get_tree().current_scene.add_child(p4char)
 		p4char.global_position = Vector2(840,0)
 		Global.g_Player4Character = p4char

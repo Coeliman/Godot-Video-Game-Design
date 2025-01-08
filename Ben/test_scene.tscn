@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://0o0h2kq0531w"]
+[gd_scene load_steps=7 format=3 uid="uid://0o0h2kq0531w"]
 
-[ext_resource type="PackedScene" uid="uid://48r7i67ybude" path="res://!!Assets/Characters/Test_charater.tscn" id="1_3rb2w"]
+[ext_resource type="PackedScene" uid="uid://dyy8ntdjeo7oi" path="res://!!Assets/Characters/astro.tscn" id="2_562iq"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_qtrrq"]
+[ext_resource type="PackedScene" uid="uid://7rbeuy6co74r" path="res://!!Assets/Characters/astro_2.tscn" id="3_gtti6"]
+[ext_resource type="PackedScene" uid="uid://yyn5t22oxcjq" path="res://!!Assets/Characters/astro_3.tscn" id="4_q0o24"]
+[ext_resource type="PackedScene" uid="uid://dhpm27r5iwl5n" path="res://!!Assets/Characters/astro_4.tscn" id="5_kcoix"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oo8wt"]
 shader = ExtResource("2_qtrrq")
 shader_parameter/pixel_range = 4.0
 
 [node name="Test_Scene" type="Node2D"]
-
-[node name="Test_Character" parent="." instance=ExtResource("1_3rb2w")]
-position = Vector2(556, 276)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -22,3 +22,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Astro" parent="." instance=ExtResource("2_562iq")]
+position = Vector2(680, 247)
+
+[node name="Astro2" parent="." instance=ExtResource("3_gtti6")]
+position = Vector2(423, 229)
+
+[node name="Astro3" parent="." instance=ExtResource("4_q0o24")]
+position = Vector2(155, 253)
+
+[node name="Astro4" parent="." instance=ExtResource("5_kcoix")]
+position = Vector2(953, 230)
