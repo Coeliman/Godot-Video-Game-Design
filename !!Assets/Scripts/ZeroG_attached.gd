@@ -23,24 +23,24 @@ func _ready() -> void:
 	get_tree().current_scene.add_child(p2char)
 	p2char.global_position = Vector2(0,0)
 	Global.g_Player2Character = p2char
-	Global.g_P2_Path = p2char.get_child(2).get_path()
-	print(p2char.get_child(2).get_path())
+	Global.g_P2_Path = p2char.get_child(1).get_path()
+	print(p2char.get_child(1).get_path())
 	if pcount == 3 or pcount == 4:
 		# loads char3 into scene
 		var p3char = load("res://!!Assets/Characters/astro_3.tscn").instantiate()
 		get_tree().current_scene.add_child(p3char)
 		p3char.global_position = Vector2(420,0)
 		Global.g_Player3Character = p3char
-		Global.g_P3_Path = p3char.get_child(2).get_path()
-		print(p3char.get_child(2).get_path())
+		Global.g_P3_Path = p3char.get_child(1).get_path()
+		print(p3char.get_child(1).get_path())
 	if pcount == 4:
 		#loads char4 into scene
 		var p4char = load("res://!!Assets/Characters/astro_4.tscn").instantiate()
 		get_tree().current_scene.add_child(p4char)
 		p4char.global_position = Vector2(840,0)
 		Global.g_Player4Character = p4char
-		Global.g_P4_Path = p4char.get_child(2).get_path()
-		print(p4char.get_child(2).get_path())
+		Global.g_P4_Path = p4char.get_child(1).get_path()
+		print(p4char.get_child(1).get_path())
 		
 	## ROPE IMPORTS
 	# For Starting Locs (LocS/CamLocS) you must change NodeA
