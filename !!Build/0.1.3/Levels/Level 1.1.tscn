@@ -1,0 +1,209 @@
+[gd_scene load_steps=17 format=4 uid="uid://dlmgpb2e8f58s"]
+
+[ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_3ekrf"]
+[ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_tp4n8"]
+[ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="3_1yd8w"]
+[ext_resource type="Texture2D" uid="uid://b7qb2fa20pfm7" path="res://!!Assets/Sprites/Temporary Assets/tilemap-template-32px-grid-dark.png" id="4_fna5h"]
+[ext_resource type="Texture2D" uid="uid://dsot5vsbrbvi0" path="res://!!Assets/Sprites/Temporary Assets/tilemap-template-32px-grid.png" id="5_jxqvk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
+shader = ExtResource("2_tp4n8")
+shader_parameter/pixel_range = 2.0
+
+[sub_resource type="Environment" id="Environment_w0ntq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1hn2"]
+shader = ExtResource("3_1yd8w")
+shader_parameter/dim = 0.5
+
+[sub_resource type="GDScript" id="GDScript_mdtpd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xc83e"]
+texture = ExtResource("4_fna5h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_024oe"]
+texture = ExtResource("5_jxqvk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_726ni"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_xc83e")
+sources/1 = SubResource("TileSetAtlasSource_024oe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6st3"]
+shader = ExtResource("2_tp4n8")
+shader_parameter/pixel_range = 2.0
+
+[sub_resource type="Environment" id="Environment_jtill"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i5fg5"]
+shader = ExtResource("3_1yd8w")
+shader_parameter/dim = 0.5
+
+[sub_resource type="GDScript" id="GDScript_2ivng"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level 1" type="Node2D" parent="."]
+script = ExtResource("1_3ekrf")
+
+[node name="Characters" type="Node" parent="Level 1"]
+unique_name_in_owner = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Level 1/Characters"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Level 1/Characters"]
+
+[node name="Pixelate" type="ColorRect" parent="Level 1/Characters/CanvasLayer"]
+material = SubResource("ShaderMaterial_b8irb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level 1/Characters"]
+environment = SubResource("Environment_w0ntq")
+
+[node name="Dim" type="CanvasModulate" parent="Level 1/Characters/WorldEnvironment"]
+visible = false
+material = SubResource("ShaderMaterial_i1hn2")
+scale = Vector2(1e-05, 1e-05)
+color = Color(1, 0.802515, 0.516336, 1)
+script = SubResource("GDScript_mdtpd")
+
+[node name="Map 1 (In progress)" type="Node" parent="Level 1"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Level 1/Map 1 (In progress)"]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_726ni")
+
+[node name="Characters2" type="Node" parent="Level 1"]
+unique_name_in_owner = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Level 1/Characters2"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Level 1/Characters2"]
+
+[node name="Pixelate" type="ColorRect" parent="Level 1/Characters2/CanvasLayer"]
+material = SubResource("ShaderMaterial_s6st3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -952.0
+offset_top = -948.0
+offset_right = -952.0
+offset_bottom = -948.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level 1/Characters2"]
+environment = SubResource("Environment_jtill")
+
+[node name="Dim" type="CanvasModulate" parent="Level 1/Characters2/WorldEnvironment"]
+visible = false
+material = SubResource("ShaderMaterial_i5fg5")
+scale = Vector2(1e-05, 1e-05)
+color = Color(1, 0.802515, 0.516336, 1)
+script = SubResource("GDScript_2ivng")
