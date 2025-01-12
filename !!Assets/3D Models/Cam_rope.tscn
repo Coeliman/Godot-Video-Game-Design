@@ -34,6 +34,7 @@ position = Vector2(442, 266)
 rotation = 1.5708
 
 [node name="Camera2D" type="Camera2D" parent="Rope_Segment8"]
+zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
