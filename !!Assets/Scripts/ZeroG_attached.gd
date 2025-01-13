@@ -1,16 +1,28 @@
 extends Node
 
 #sets the max distance they can go from eachother
+
 var max_distance: float = 410.0
 var bounce: float = 100.0
 var pcount = Global.Players
-var paused = false
+
+var loading : PackedScene
+var timer: Timer
+var loading_instance : Node
 #calls characters
 
 
 func _ready() -> void:
 	##CHARACTER IMPORTS
-	
+	loading = load("res://!!Assets/Scenes/Loading.tscn")
+	loading_instance = loading.instantiate()
+	add_child(loading_instance)
+	timer = Timer.new()
+	timer.wait_time = 2.0
+	timer.one_shot = true
+	timer.connect("timeout",Callable(self,"_on_Timer_timeout"))
+	add_child(timer)
+	timer.start()
 	# loads char1 into scene
 	var p1char = load("res://!!Assets/Characters/astro.tscn").instantiate()
 	get_tree().current_scene.add_child(p1char)
@@ -98,6 +110,8 @@ func _ready() -> void:
 		atc34S.node_a = Global.g_P3_Path
 		atc34E.node_b = Global.g_P4_Path
 		
+func _on_Timer_timeout():
+	loading_instance.call_deferred("queue_free")
 func _process(_delta: float) -> void:
 	# pause menu calculations
 	
