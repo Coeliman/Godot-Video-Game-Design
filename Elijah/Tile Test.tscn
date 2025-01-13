@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_4xqvb"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="3_wfxtb"]
 [ext_resource type="PackedScene" uid="uid://xc3a38jf3ms5" path="res://!!Assets/3D Models/Physics box.tscn" id="4_5oud1"]
-[ext_resource type="TileSet" uid="uid://bd1l3hw3pgs1k" path="res://!!Assets/Sprites/Tilemaps/Holder_Space_Set.tres" id="4_ikln8"]
+[ext_resource type="TileSet" uid="uid://bd1l3hw3pgs1k" path="res://!!Assets/Sprites/Holder_Space_Set.tres" id="4_ikln8"]
 [ext_resource type="PackedScene" uid="uid://p4wkygpnx02r" path="res://!!Assets/3D Models/boost_pad.tscn" id="6_ocb6h"]
 [ext_resource type="PackedScene" uid="uid://gwkaq6ioyaaw" path="res://!!Assets/3D Models/win zone.tscn" id="7_rum20"]
 
