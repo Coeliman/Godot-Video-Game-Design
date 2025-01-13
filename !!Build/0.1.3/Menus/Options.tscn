@@ -127,6 +127,15 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 U_Action_Name = "p1_right"
 
+[node name="Spacer3" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "P1"
+horizontal_alignment = 1
+
 [node name="GridContainer2" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 0
@@ -164,13 +173,22 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 U_Action_Name = "p2_right"
 
+[node name="Spacer3" type="Control" parent="GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer2"]
+layout_mode = 2
+text = "P2"
+horizontal_alignment = 1
+
 [node name="GridContainer3" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 0
-offset_left = 600.0
+offset_left = 696.0
 offset_top = 350.0
-offset_right = 750.0
-offset_bottom = 450.0
+offset_right = 854.0
+offset_bottom = 454.0
 columns = 3
 
 [node name="Spacer" type="Control" parent="GridContainer3"]
@@ -201,13 +219,22 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 U_Action_Name = "p3_right"
 
+[node name="Spacer3" type="Control" parent="GridContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer3"]
+layout_mode = 2
+text = "P3"
+horizontal_alignment = 1
+
 [node name="GridContainer4" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 0
-offset_left = 800.0
+offset_left = 896.0
 offset_top = 350.0
-offset_right = 950.0
-offset_bottom = 450.0
+offset_right = 1054.0
+offset_bottom = 454.0
 columns = 3
 
 [node name="Spacer" type="Control" parent="GridContainer4"]
@@ -237,6 +264,33 @@ U_Action_Name = "p4_down"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 U_Action_Name = "p4_right"
+
+[node name="Spacer3" type="Control" parent="GridContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer4"]
+layout_mode = 2
+text = "P4"
+horizontal_alignment = 1
+
+[node name="GridContainer5" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 0
+offset_left = 551.0
+offset_top = 350.0
+offset_right = 709.0
+offset_bottom = 454.0
+
+[node name="Hotkey_Rebind_Button" parent="GridContainer5" instance=ExtResource("4_yn17k")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+U_Action_Name = "Menu"
+
+[node name="Label" type="Label" parent="GridContainer5"]
+layout_mode = 2
+text = "Menu"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="2 players/Button" to="." method="_2player_pressed"]
 [connection signal="pressed" from="3 players/Button" to="." method="_3player_pressed"]

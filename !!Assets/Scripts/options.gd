@@ -5,7 +5,7 @@ func _ready() -> void:
 	
 
 func _on_button_pressed() -> void:
-	queue_free()
+	get_tree().change_scene_to_file("res://!!Build/0.1.3/Menus/0.1.3.tscn")
 
 
 func _2player_pressed() -> void:

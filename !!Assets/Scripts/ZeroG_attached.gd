@@ -1,9 +1,10 @@
 extends Node
 
 #sets the max distance they can go from eachother
-var max_distance: float = 425.0
+var max_distance: float = 410.0
 var bounce: float = 100.0
 var pcount = Global.Players
+var paused = false
 #calls characters
 
 
@@ -98,6 +99,14 @@ func _ready() -> void:
 		atc34E.node_b = Global.g_P4_Path
 		
 func _process(_delta: float) -> void:
+	# pause menu calculations
+	
+	if Input.is_action_pressed("Menu") and Global.paused == false:
+		Global.paused = true
+		var Pause = load("res://!!Build/0.1.3/Menus/PauseMenu.tscn").instantiate()
+		get_tree().current_scene.add_child(Pause)
+		Engine.time_scale =0.01
+	
 	#calculates distance between them
 	var distance12 = Global.g_Player1Character.position.distance_to(Global.g_Player2Character.position)
 	#sees if over max distance

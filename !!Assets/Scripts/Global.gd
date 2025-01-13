@@ -19,3 +19,5 @@ var g_P3_Path = 0
 var g_P4_Path = 0
 #to pop-up a notification to choose keybinds and player # in settings on first play
 var FirstTimePlaying = true
+
+var paused = false

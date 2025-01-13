@@ -6,12 +6,12 @@ extends Control
 
 
 @export var U_Action_Name : String = "p1_up" #which player input do you wish to use, should be p1_up, p2_left, etc
-
+var is_editing:bool = false
 
 func _ready():
 	set_process_unhandled_input(false)
 	set_text_for_key()
-	
+	$Container/HotkeyB.focus_mode = Control.FOCUS_NONE
 
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(U_Action_Name)
@@ -23,14 +23,16 @@ func set_text_for_key() -> void:
 func _on_hotkey_b_toggled(toggled_on: bool):
 	if toggled_on == true:
 		button.text = ". . ."
-		set_process_unhandled_key_input(toggled_on)
+		is_editing = true
+		set_process_unhandled_key_input(true)
 		
 		for i in get_tree().get_nodes_in_group("hotkey_button"):
 			if i.U_Action_Name != self.U_Action_Name:
 				i.button.toggle_mode = false
 				i.set_process_unhandled_key_input(false)
 	else:
-		
+		is_editing = false
+		set_process_unhandled_key_input(false)
 		for i in get_tree().get_nodes_in_group("hotkey_button"):
 			if i.U_Action_Name != self.U_Action_Name:
 				i.button.toggle_mode = true
@@ -40,9 +42,10 @@ func _on_hotkey_b_toggled(toggled_on: bool):
 		#this is what stops you from pressing like 5 buttons at once
 		
 func _unhandled_key_input(event: InputEvent):
-	rebind_action_key(event)
-	button.button_pressed = false
-	#pending input
+	if is_editing:
+		rebind_action_key(event)
+		button.button_pressed = false
+		#pending input
 
 
 func rebind_action_key(event) -> void:
