@@ -14,3 +14,9 @@ func _on_resume_pressed() -> void:
 	Global.paused = false
 	Engine.time_scale=1
 	
+
+
+func _on_restart_level_pressed() -> void:
+	get_tree().reload_current_scene()
+	Global.paused = false
+	Engine.time_scale=1

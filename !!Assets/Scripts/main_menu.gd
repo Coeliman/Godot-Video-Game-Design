@@ -15,6 +15,3 @@ func _on_start_pressed() -> void:
 func _on_options_pressed() -> void:
 	var options = load("res://!!Build/0.1.3/Menus/Options.tscn").instantiate()
 	get_tree().current_scene.add_child(options)
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
