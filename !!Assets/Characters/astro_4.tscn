@@ -62,6 +62,8 @@ height = 780.026
 
 [node name="Astro4" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_gnjy7")
 
 [node name="Character Container" type="Node2D" parent="."]
@@ -329,6 +331,8 @@ rotation = 0.00193102
 [node name="IKLLeg" type="Node2D" parent="Character Container/IK Nodes"]
 position = Vector2(-100.83, 947.807)
 rotation = 0.00193102
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Col" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -120)
