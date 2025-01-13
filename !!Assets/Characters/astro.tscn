@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dyy8ntdjeo7oi"]
+[gd_scene load_steps=19 format=3 uid="uid://dyy8ntdjeo7oi"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/Astro.cs" id="1_dme1y"]
 [ext_resource type="Shader" path="res://!!Assets/Shaders/Color_Change.gdshader" id="1_u0w7d"]
@@ -56,40 +56,8 @@ modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_mxj5l")
 modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_nmrep")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_wvya1")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwckp"]
-radius = 67.8094
-height = 330.053
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmdh2"]
-radius = 87.9865
-height = 404.776
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0k7k2"]
-radius = 65.035
-height = 324.722
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1v0cy"]
-radius = 79.8268
-height = 364.029
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_asurf"]
-radius = 80.0056
-height = 334.015
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjfly"]
-radius = 69.023
-height = 387.98
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ds6a0"]
-radius = 67.9925
-height = 390.042
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5jp0"]
-radius = 76.5536
-height = 324.529
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldljf"]
-radius = 132.021
+radius = 168.0
 height = 780.026
 
 [node name="Astro" type="CharacterBody2D"]
@@ -195,7 +163,6 @@ uv = PackedVector2Array(701.629, 1814.76, 714.904, 1718.04, 737.659, 1678.22, 73
 bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip/Left_Knee", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/Right_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip/Right_Knee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Bones" type="Skeleton2D" parent="Character Container"]
-visible = false
 rotation = -0.00193102
 modification_stack = SubResource("SkeletonModificationStack2D_d0lpk")
 
@@ -251,24 +218,6 @@ rotation = 0.0193102
 scale = Vector2(inf, inf)
 remote_path = NodePath("..")
 
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Chest/Left_Shoulder/Left_Elbow"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Left_Shoulder/Left_Elbow/Rigid"]
-position = Vector2(-176.069, 35.66)
-rotation = 1.21999
-shape = SubResource("CapsuleShape2D_pwckp")
-
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Chest/Left_Shoulder"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Left_Shoulder/Rigid"]
-position = Vector2(-197.048, 24.6195)
-rotation = 1.41721
-shape = SubResource("CapsuleShape2D_cmdh2")
-
 [node name="Right_Shoulder" type="Bone2D" parent="Character Container/Bones/Pelvis/Chest"]
 z_index = 3
 position = Vector2(162.237, -2.68694)
@@ -297,24 +246,6 @@ position = Vector2(-2.06259e+31, 7.62785e+32)
 rotation = 0.0308963
 scale = Vector2(inf, inf)
 remote_path = NodePath("..")
-
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder/Right_Elbow"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder/Right_Elbow/Rigid"]
-position = Vector2(175.924, 39.3398)
-rotation = -1.22348
-shape = SubResource("CapsuleShape2D_0k7k2")
-
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Chest/Right_Shoulder/Rigid"]
-position = Vector2(189.944, 29.3668)
-rotation = -1.39103
-shape = SubResource("CapsuleShape2D_1v0cy")
 
 [node name="Left_Hip" type="Bone2D" parent="Character Container/Bones/Pelvis"]
 z_index = 3
@@ -347,22 +278,6 @@ scale = Vector2(nan, nan)
 skew = nan
 remote_path = NodePath("..")
 
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Left_Hip/Left_Knee"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Left_Hip/Left_Knee/Rigid"]
-position = Vector2(20.2182, -192.223)
-shape = SubResource("CapsuleShape2D_asurf")
-
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Left_Hip"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Left_Hip/Rigid"]
-position = Vector2(-27.5755, 597.749)
-shape = SubResource("CapsuleShape2D_yjfly")
-
 [node name="Right_Hip" type="Bone2D" parent="Character Container/Bones/Pelvis"]
 z_index = 3
 position = Vector2(89, 146)
@@ -393,32 +308,7 @@ scale = Vector2(nan, nan)
 skew = nan
 remote_path = NodePath("..")
 
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Right_Hip/Right_Knee"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Right_Hip/Right_Knee/Rigid"]
-position = Vector2(-3.574, 226.236)
-shape = SubResource("CapsuleShape2D_ds6a0")
-
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis/Right_Hip"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Right_Hip/Rigid"]
-position = Vector2(13.2197, 178.198)
-shape = SubResource("CapsuleShape2D_v5jp0")
-
-[node name="Rigid" type="RigidBody2D" parent="Character Container/Bones/Pelvis"]
-gravity_scale = 0.1
-sleeping = true
-
-[node name="Col" type="CollisionShape2D" parent="Character Container/Bones/Pelvis/Rigid"]
-position = Vector2(-2.68331, -244.005)
-shape = SubResource("CapsuleShape2D_ldljf")
-
 [node name="IK Nodes" type="Node2D" parent="Character Container"]
-visible = false
 rotation = -0.00193102
 
 [node name="IKRArm" type="Node2D" parent="Character Container/IK Nodes"]
@@ -437,4 +327,6 @@ rotation = 0.00193102
 position = Vector2(-100.83, 947.807)
 rotation = 0.00193102
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Col" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -120)
+shape = SubResource("CapsuleShape2D_ldljf")
