@@ -177,3 +177,4 @@ public partial class Astro3 : CharacterBody2D
         }
     }
 }
+ 
