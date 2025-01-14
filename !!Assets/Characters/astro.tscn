@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://dyy8ntdjeo7oi"]
 
-[ext_resource type="Script" path="res://!!Assets/Scripts/Astro.cs" id="1_dme1y"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/Astro.gd" id="1_exbyd"]
 [ext_resource type="Shader" path="res://!!Assets/Shaders/Color_Change.gdshader" id="1_u0w7d"]
 [ext_resource type="Texture2D" uid="uid://dtr3pdowv7eck" path="res://!!Assets/Sprites/Astro/Torso.png" id="2_1pvvp"]
 [ext_resource type="Texture2D" uid="uid://c22upf15au4f7" path="res://!!Assets/Sprites/Astro/Right_Arm.png" id="3_rjp11"]
@@ -64,7 +64,7 @@ z_index = 3
 scale = Vector2(0.25, 0.25)
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_dme1y")
+script = ExtResource("1_exbyd")
 
 [node name="Character Container" type="Node2D" parent="."]
 
