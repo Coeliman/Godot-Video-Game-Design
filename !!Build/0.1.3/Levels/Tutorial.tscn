@@ -271,6 +271,7 @@ unique_name_in_owner = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Characters"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Characters"]
+follow_viewport_scale = 1.5
 
 [node name="Pixelate" type="ColorRect" parent="Characters/CanvasLayer"]
 material = SubResource("ShaderMaterial_b8irb")
