@@ -68,11 +68,11 @@ public partial class Astro : CharacterBody2D
 					velocity.Y = 0.0f;
 				}
 			}
-        }
+		}
 
-        KinematicCollision2D collision = MoveAndCollide(velocity * (float)delta);
+		KinematicCollision2D collision = MoveAndCollide(velocity * (float)delta);
 
-        if (direction == Vector2.Zero) {
+		if (direction == Vector2.Zero) {
 			if (collision != null)
 			{
 				if (GetPositionDelta().X == Position.X)
@@ -86,7 +86,7 @@ public partial class Astro : CharacterBody2D
 			}
 		}
 
-        Velocity = velocity;
+		Velocity = velocity;
 		//MoveAndSlide();
 
 		Vector2 dragVector = -velocity * DragCoefficient;
