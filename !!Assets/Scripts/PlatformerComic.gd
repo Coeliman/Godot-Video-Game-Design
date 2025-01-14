@@ -5,4 +5,4 @@ extends Node
 #"res://!!Build/0.1.3/Levels/platformer.tscn"
 
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://Elijah/Tile Test.tscn")
+	get_tree().change_scene_to_file("res://!!Build/0.1.3/Levels/challenge_map_1.tscn")

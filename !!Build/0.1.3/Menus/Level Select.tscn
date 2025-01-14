@@ -26,47 +26,64 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = -15.0
-offset_right = 500.0
-offset_bottom = 16.0
+offset_left = 194.0
+offset_top = -13.0
+offset_right = 394.0
+offset_bottom = 18.0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Platformer Physics
+text = "Level 1
 "
 expand_icon = true
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -453.0
-offset_top = -15.0
-offset_right = -300.0
-offset_bottom = 16.0
-grow_horizontal = 0
+offset_left = -76.0
+offset_top = -119.0
+offset_right = 77.0
+offset_bottom = -88.0
+grow_horizontal = 2
 grow_vertical = 2
-text = "Floating Physics"
+text = "Tutorial
+"
 expand_icon = true
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -496.0
-offset_top = -15.0
-offset_right = -290.0
-offset_bottom = 16.0
-grow_horizontal = 0
+offset_left = -76.0
+offset_top = -13.0
+offset_right = 77.0
+offset_bottom = 18.0
+grow_horizontal = 2
 grow_vertical = 2
-text = "Floating Physics"
+text = "Level 2(NF)"
+expand_icon = true
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -13.0
+offset_right = 337.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 3(NF)"
 expand_icon = true
 
 [node name="Button4" type="Button" parent="."]
@@ -104,4 +121,5 @@ texture = ExtResource("2_6p8uh")
 [connection signal="pressed" from="Button" to="." method="platformer_pressed"]
 [connection signal="pressed" from="Button2" to="." method="zerog_pressed"]
 [connection signal="pressed" from="Button3" to="." method="zerog_pressed"]
+[connection signal="pressed" from="Button5" to="." method="zerog_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_close_pressed"]

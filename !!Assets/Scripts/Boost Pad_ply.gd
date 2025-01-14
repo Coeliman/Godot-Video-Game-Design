@@ -26,11 +26,20 @@ func body_entered(body: Node2D) -> void:
 	P4 = root.get_node("Astro4")
 
 	if body.name == "Astro" or body.name == "Astro2" or body.name == "Astro3" or body.name == "Astro4":
-		if Global.Players ==2:
-			P1.velocity = bounce_pad_direction.rotated(rotation) * bounce #only works for rigidbodies
-			P2.velocity = bounce_pad_direction.rotated(rotation) * bounce 
-		if Global.Players ==3:
-			P3.velocity = bounce_pad_direction.rotated(rotation) * bounce 
-		if Global.Players ==4:
-			P4.velocity = bounce_pad_direction.rotated(rotation) * bounce 
+		if rotation != null:
+			if Global.Players ==2:
+				P1.velocity = bounce_pad_direction.rotated(rotation) * bounce #only works for rigidbodies
+				P2.velocity = bounce_pad_direction.rotated(rotation) * bounce 
+			if Global.Players ==3:
+				P3.velocity = bounce_pad_direction.rotated(rotation) * bounce 
+			if Global.Players ==4:
+				P4.velocity = bounce_pad_direction.rotated(rotation) * bounce 
+		else:
+			if Global.Players ==2:
+				P1.velocity = bounce_pad_direction * bounce #only works for rigidbodies
+				P2.velocity = bounce_pad_direction * bounce 
+			if Global.Players ==3:
+				P3.velocity = bounce_pad_direction * bounce 
+			if Global.Players ==4:
+				P4.velocity = bounce_pad_direction * bounce 
 		
