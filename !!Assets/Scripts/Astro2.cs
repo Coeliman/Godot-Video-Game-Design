@@ -3,7 +3,7 @@ using System;
 
 public partial class Astro2 : CharacterBody2D
 {
-	public const float maxSpeed = 150.0f;
+	public const float maxSpeed = 75.0f;
 	public const float accel = 1200.0f;
 
 	private const float DragCoefficient = 0.1f;
@@ -113,37 +113,37 @@ public partial class Astro2 : CharacterBody2D
 
 		Vector2 origin = GlobalPosition;
 		switch (num)
-		{
-			case 0:
-				origin = rightShoulder.GlobalPosition;
-				bone = rightShoulder;
-				maxAngle = 70;
-				minAngle = -62;
-				break;
+        {
+            case 0:
+                origin = rightShoulder.GlobalPosition;
+                bone = rightShoulder;
+                maxAngle = 30;
+                minAngle = -30;
+                break;
 
-			case 1:
-				origin = leftShoulder.GlobalPosition;
-				bone = leftShoulder;
-				maxAngle = 62;
-				minAngle = -70;
-				break;
+            case 1:
+                origin = leftShoulder.GlobalPosition;
+                bone = leftShoulder;
+                maxAngle = 30;
+                minAngle = -30;
+                break;
 
-			case 2:
-				origin = rightHip.GlobalPosition;
-				bone = rightHip;
-				maxAngle = 10;
-				minAngle = -70;
-				break;
+            case 2:
+                origin = rightHip.GlobalPosition;
+                bone = rightHip;
+                maxAngle = 10;
+                minAngle = -30;
+                break;
 
-			case 3:
-				origin = leftHip.GlobalPosition;
-				bone = leftHip;
-				maxAngle = 70;
-				minAngle = -10;
-				break;
-		}
+            case 3:
+                origin = leftHip.GlobalPosition;
+                bone = leftHip;
+                maxAngle = 30;
+                minAngle = -10;
+                break;
+        }
 
-		if (newPosition.DistanceTo(origin) > MaxIKDistance)
+        if (newPosition.DistanceTo(origin) > MaxIKDistance)
 		{
 			newPosition = origin + (newPosition - origin).Normalized() * MaxIKDistance;
 		}

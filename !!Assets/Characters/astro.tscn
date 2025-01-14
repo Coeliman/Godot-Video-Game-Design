@@ -56,9 +56,8 @@ modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_mxj5l")
 modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_nmrep")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_wvya1")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldljf"]
-radius = 168.0
-height = 780.026
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ejnp"]
+size = Vector2(387, 881.5)
 
 [node name="Astro" type="CharacterBody2D"]
 z_index = 3
@@ -332,5 +331,5 @@ rotation = 0.00193102
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Col" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -120)
-shape = SubResource("CapsuleShape2D_ldljf")
+position = Vector2(-4, -152)
+shape = SubResource("RectangleShape2D_8ejnp")

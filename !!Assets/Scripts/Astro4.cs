@@ -117,28 +117,28 @@ public partial class Astro4 : CharacterBody2D
             case 0:
                 origin = rightShoulder.GlobalPosition;
                 bone = rightShoulder;
-                maxAngle = 70;
-                minAngle = -62;
+                maxAngle = 30;
+                minAngle = -30;
                 break;
 
             case 1:
                 origin = leftShoulder.GlobalPosition;
                 bone = leftShoulder;
-                maxAngle = 62;
-                minAngle = -70;
+                maxAngle = 30;
+                minAngle = -30;
                 break;
 
             case 2:
                 origin = rightHip.GlobalPosition;
                 bone = rightHip;
                 maxAngle = 10;
-                minAngle = -70;
+                minAngle = -30;
                 break;
 
             case 3:
                 origin = leftHip.GlobalPosition;
                 bone = leftHip;
-                maxAngle = 70;
+                maxAngle = 30;
                 minAngle = -10;
                 break;
         }
