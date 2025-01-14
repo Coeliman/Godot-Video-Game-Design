@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_llklw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/Center"]
 modulate = Color(1, 0.0823529, 1, 1)
+z_index = 3
 texture = ExtResource("2_viuwa")
 
 [node name="Right" type="Node2D" parent="Area2D"]

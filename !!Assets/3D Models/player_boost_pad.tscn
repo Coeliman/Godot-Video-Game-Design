@@ -19,6 +19,7 @@ shape = SubResource("RectangleShape2D_llklw")
 [node name="Center" type="Node2D" parent="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/Center"]
+z_index = 3
 texture = ExtResource("2_4pbyh")
 
 [node name="Right" type="Node2D" parent="Area2D"]

@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dxkdlfpee8gxj"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dxkdlfpee8gxj"]
 
 [ext_resource type="Texture2D" uid="uid://ceiswernl83jv" path="res://!!Assets/Sprites/Tilemaps/Asteroid Tilemap.png" id="1_gho0x"]
 [ext_resource type="Texture2D" uid="uid://jsba8ortxgob" path="res://!!Assets/Sprites/Tilemaps/Basic Space Tilemap.png" id="2_87r51"]
+[ext_resource type="Texture2D" uid="uid://b0cil5pjeaom2" path="res://!!Assets/Sprites/Tilemaps/tile map fuck yeah.png" id="3_oxmmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4p0h"]
 texture = ExtResource("2_87r51")
@@ -252,8 +253,14 @@ texture_region_size = Vector2i(64, 64)
 6:7/0 = 0
 6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6i0xk"]
+texture = ExtResource("3_oxmmc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_o4p0h")
 sources/1 = SubResource("TileSetAtlasSource_83hes")
+sources/2 = SubResource("TileSetAtlasSource_6i0xk")

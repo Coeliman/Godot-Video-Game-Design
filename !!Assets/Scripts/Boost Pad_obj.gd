@@ -1,7 +1,7 @@
 extends Node
 var bounce:float = 1000.0
 var bounce_pad_direction
-var rotation
+var rotation:float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

@@ -11,6 +11,7 @@ script = ExtResource("1_qhqmy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
+z_index = 3
 texture = ExtResource("2_1sqp2")
 
 [node name="Area2D" type="Area2D" parent="."]
