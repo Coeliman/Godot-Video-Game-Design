@@ -71,7 +71,7 @@ func _process(_delta: float) -> void:
 	_ApplyDragToIKTarget(leftLeg,dragVector,_delta,3)
 	pass
 func _ApplyDragToIKTarget(ikTarget:Node2D,dragVector:Vector2,delta:float,num:int):
-	var currentPosition:Vector2 = ikTarget.position
+	var currentPosition:Vector2 = ikTarget.global_position
 	
 	var targetPosition = currentPosition + dragVector.normalized()* ikDrag
 	
@@ -104,7 +104,7 @@ func _ApplyDragToIKTarget(ikTarget:Node2D,dragVector:Vector2,delta:float,num:int
 			maxAngle = 30
 			minAngle = -10
 	if newPosition.distance_to(orgin) > MaxIKDistance:
-		newPosition = orgin + (newPosition-orgin).normalized() * MaxIKDistance
+		newPosition = orgin + (newPosition - orgin).normalized() * MaxIKDistance
 	elif newPosition.distance_to(orgin) <MinIKDistance:
 		newPosition = orgin + (newPosition - orgin).normalized() * MinIKDistance
 	
@@ -121,4 +121,3 @@ func _ApplyDragToIKTarget(ikTarget:Node2D,dragVector:Vector2,delta:float,num:int
 			3:
 				newPosition = newPosition + Vector2(-3.0,3.0)
 		ikTarget.global_position = newPosition
-	
