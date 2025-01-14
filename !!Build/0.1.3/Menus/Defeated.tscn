@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvnf8y8puehs7"]
+
+[ext_resource type="Script" path="res://!!Assets/Scripts/Pause Menu.gd" id="1_c0dll"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0dll")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 200
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.533333)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+z_index = 250
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -174.0
+offset_right = 74.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+text = "You Lost"
+horizontal_alignment = 1
+
+[node name="Main menu" type="Button" parent="CanvasLayer"]
+z_index = 250
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -15.5
+offset_right = -180.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="Restart Level" type="Button" parent="CanvasLayer"]
+z_index = 250
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = -15.0
+offset_right = 276.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Retry"
+
+[connection signal="pressed" from="CanvasLayer/Main menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Restart Level" to="." method="_on_restart_level_pressed"]

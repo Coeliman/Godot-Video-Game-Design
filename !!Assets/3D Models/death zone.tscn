@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://gwkaq6ioyaaw"]
+[gd_scene load_steps=4 format=3 uid="uid://b771w5fem36v3"]
 
-[ext_resource type="Script" path="res://!!Assets/Scripts/win_zone.gd" id="1_myuhv"]
-[ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="2_jvrx7"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/death_zone.gd" id="1_qhqmy"]
+[ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="2_1sqp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llklw"]
 size = Vector2(128, 130)
 
 [node name="Win Zone" type="Node2D"]
-script = ExtResource("1_myuhv")
+script = ExtResource("1_qhqmy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jvrx7")
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_1sqp2")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-modulate = Color(0, 1, 0, 1)
 shape = SubResource("RectangleShape2D_llklw")
 
 [node name="Center" type="Node2D" parent="Area2D"]

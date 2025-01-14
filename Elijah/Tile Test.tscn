@@ -1,12 +1,15 @@
-[gd_scene load_steps=12 format=4 uid="uid://dwlo4nmsmjgbj"]
+[gd_scene load_steps=15 format=4 uid="uid://dwlo4nmsmjgbj"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_hr2um"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_4xqvb"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Dimmer.gdshader" id="3_wfxtb"]
 [ext_resource type="PackedScene" uid="uid://xc3a38jf3ms5" path="res://!!Assets/3D Models/Physics box.tscn" id="4_5oud1"]
-[ext_resource type="TileSet" uid="uid://bd1l3hw3pgs1k" path="res://!!Assets/Sprites/Tilemaps/Holder_Space_Set.tres" id="4_ikln8"]
-[ext_resource type="PackedScene" uid="uid://p4wkygpnx02r" path="res://!!Assets/3D Models/boost_pad.tscn" id="6_ocb6h"]
+[ext_resource type="TileSet" uid="uid://dxkdlfpee8gxj" path="res://!!Assets/Sprites/Tilemaps/Tile Test.tres" id="4_kgmlc"]
+[ext_resource type="PackedScene" uid="uid://p4wkygpnx02r" path="res://!!Assets/3D Models/object_boost_pad.tscn" id="6_ocb6h"]
 [ext_resource type="PackedScene" uid="uid://gwkaq6ioyaaw" path="res://!!Assets/3D Models/win zone.tscn" id="7_rum20"]
+[ext_resource type="PackedScene" uid="uid://b771w5fem36v3" path="res://!!Assets/3D Models/death zone.tscn" id="8_vsj57"]
+[ext_resource type="PackedScene" uid="uid://c7rva5imt04fr" path="res://!!Assets/3D Models/player_boost_pad.tscn" id="9_6ftx2"]
+[ext_resource type="PackedScene" uid="uid://daw3yor6yx6nw" path="res://!!Assets/Scenes/Character Dictator.tscn" id="10_wh1d5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
 shader = ExtResource("2_4xqvb")
@@ -51,16 +54,27 @@ script = SubResource("GDScript_mdtpd")
 [node name="Map 1 (In progress)" type="Node" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Map 1 (In progress)"]
-tile_map_data = PackedByteArray("AAACAAAAAwABAAIAAAADAAAAAwABAAIAAAAEAAAAAwABAAIAAAAFAAAAAwABAAIAAAAGAAAAAwABAAIAAAAHAAAAAwABAAIAAAAIAAAAAwABAAIAAAAJAAAAAwABAAIAAAAKAAAAAwABAAIAAAALAAAAAwABAAIAAAAMAAAAAwABAAIAAAANAAAAAwABAAIAAAAOAAAAAwABAAIAAAAPAAAAAwABAAIAAAAQAAAAAwABAAIAAAARAAAAAwABAAIAAAACAP7/AwABAAEAAAADAP7/AwABAAEAAAADAP3/AwABAAEAAAAEAP3/AwABAAEAAAAFAP3/AwABAAEAAAAGAP7/AwABAAEAAAAHAP7/AwABAAEAAAAIAP7/AwABAAEAAAAIAP//AwABAAEAAAAHAP//AwABAAEAAAAGAP//AwABAAEAAAAFAP//AwABAAEAAAAEAP//AwABAAEAAAADAP//AwABAAEAAAACAP//AwABAAEAAAAEAP7/AwABAAEAAAAFAP7/AwABAAEAAAAJAP7/AwABAAEAAAAKAP7/AwABAAEAAAALAP//AwABAAEAAAAMAP//AwABAAEAAAANAP//AwABAAEAAAAKAP//AwABAAEAAAAJAP//AwABAAEAAAALAP7/AwABAAEAAAAMAP7/AwABAAEAAAANAP7/AwABAAEAAAAOAP7/AwABAAEAAAAPAP7/AwABAAEAAAAQAP7/AwABAAEAAAARAP//AwABAAEAAAAQAP//AwABAAEAAAAPAP//AwABAAEAAAAOAP//AwABAAEAAAARAP7/AwABAAEAAAARAP3/AwABAAEAAAAQAP3/AwABAAEAAAAQAPz/AwABAAEAAAAPAP3/AwABAAEAAAAOAP3/AwABAAEAAAANAP3/AwABAAEAAAAMAP3/AwABAAEAAAALAP3/AwABAAEAAAAKAP3/AwABAAEAAAAJAP3/AwABAAEAAAAIAP3/AwABAAEAAAAHAP3/AwABAAEAAAAGAP3/AwABAAEAAAAHAPz/AwABAAEAAAAIAPz/AwABAAEAAAAJAPz/AwABAAEAAAAKAPz/AwABAAEAAAALAPz/AwABAAEAAAAMAPz/AwABAAEAAAANAPz/AwABAAEAAAAOAPz/AwABAAEAAAAPAPz/AwABAAEAAAARAPz/AwABAAEAAAAGAPz/AwABAAEAAAAFAPz/AwABAAEAAAAEAPz/AwABAAEAAAADAPz/AwABAAEAAAACAPz/AwABAAEAAAACAP3/AwABAAEAAAASAAAAAwACAAIAAAASAP//AwACAAEAAAASAP7/AwACAAEAAAASAP3/AwACAAEAAAASAPz/AwACAAEAAAA=")
-tile_set = ExtResource("4_ikln8")
+tile_map_data = PackedByteArray("AAACAP7/AQABAAEAAAADAP7/AQABAAEAAAADAP3/AQABAAEAAAAEAP3/AQABAAEAAAAFAP3/AQABAAEAAAAGAP7/AQABAAEAAAAHAP7/AQABAAEAAAAIAP7/AQABAAEAAAAIAP//AQABAAEAAAAHAP//AQABAAEAAAAGAP//AQABAAEAAAAFAP//AQABAAEAAAAEAP//AQABAAEAAAADAP//AQABAAEAAAACAP//AQABAAEAAAAEAP7/AQABAAEAAAAFAP7/AQABAAEAAAAJAP7/AQABAAEAAAAKAP7/AQABAAEAAAALAP//AQABAAEAAAAMAP//AQABAAEAAAANAP//AQABAAEAAAAKAP//AQABAAEAAAAJAP//AQABAAEAAAALAP7/AQABAAEAAAAMAP7/AQABAAEAAAANAP7/AQABAAEAAAAOAP7/AQABAAEAAAAPAP7/AQABAAEAAAAQAP7/AQABAAEAAAARAP7/AQABAAEAAAARAP3/AQABAAEAAAAQAP3/AQABAAEAAAAQAPz/AQABAAEAAAAPAP3/AQABAAEAAAAOAP3/AQABAAEAAAANAP3/AQABAAEAAAAMAP3/AQABAAEAAAALAP3/AQABAAEAAAAKAP3/AQABAAEAAAAJAP3/AQABAAEAAAAIAP3/AQABAAEAAAAHAP3/AQABAAEAAAAGAP3/AQABAAEAAAAHAPz/AQABAAEAAAAIAPz/AQABAAEAAAAJAPz/AQABAAEAAAAKAPz/AQABAAEAAAALAPz/AQABAAEAAAAMAPz/AQABAAEAAAANAPz/AQABAAEAAAAOAPz/AQABAAEAAAAPAPz/AQABAAEAAAARAPz/AQABAAEAAAAGAPz/AQABAAEAAAAFAPz/AQABAAEAAAAEAPz/AQABAAEAAAADAPz/AQABAAEAAAACAPz/AQABAAEAAAACAP3/AQABAAEAAAASAP//AQACAAEAAAASAP7/AQACAAEAAAASAP3/AQACAAEAAAASAPz/AQACAAEAAAACAAAAAQABAAIAAAADAAAAAQABAAIAAAAEAAAAAQABAAIAAAAFAAAAAQABAAIAAAAGAAAAAQABAAIAAAAHAAAAAQABAAIAAAAIAAAAAQABAAIAAAAJAAAAAQABAAIAAAAKAAAAAQABAAIAAAALAAAAAQABAAIAAAAMAAAAAQABAAIAAAANAAAAAQABAAIAAAAOAAAAAQABAAIAAAAPAAAAAQABAAIAAAAQAAAAAQABAAIAAAARAAAAAQABAAIAAAASAAAAAQACAAIAAAAQAP//AQABAAEAAAARAP//AQABAAEAAAAPAP//AQABAAEAAAAOAP//AQABAAEAAAA=")
+tile_set = ExtResource("4_kgmlc")
 
 [node name="Node2D" parent="." instance=ExtResource("4_5oud1")]
 position = Vector2(518, -742)
 
-[node name="Boost Pad" parent="." instance=ExtResource("6_ocb6h")]
-position = Vector2(453, -1095)
-scale = Vector2(3, 3)
-
 [node name="Win Zone" parent="." instance=ExtResource("7_rum20")]
 position = Vector2(781, 442)
 scale = Vector2(2.525, 2.525)
+
+[node name="Win Zone2" parent="." instance=ExtResource("8_vsj57")]
+position = Vector2(-1016, 913)
+scale = Vector2(2, 2)
+
+[node name="Object Boost Pad" parent="." instance=ExtResource("6_ocb6h")]
+position = Vector2(536, -1092)
+scale = Vector2(3, 3)
+
+[node name="Object Boost Pad2" parent="." instance=ExtResource("9_6ftx2")]
+position = Vector2(-1051, -1037)
+rotation = 3.14159
+scale = Vector2(3, 3)
+
+[node name="CharacterDictator" parent="." instance=ExtResource("10_wh1d5")]
