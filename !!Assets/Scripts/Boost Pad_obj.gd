@@ -18,5 +18,4 @@ func body_entered(body: Node2D) -> void:
 	
 	if body.name != "Astro" and body.name != "Astro2" and body.name != "Astro3" and body.name != "Astro4":
 		body.linear_velocity = bounce_pad_direction.rotated(rotation) * bounce #only works for rigidbodies
-		print("bounced body")
 	
