@@ -3,7 +3,7 @@ extends Node
 #sets the max distance they can go from eachother
 
 var max_distance: float = 410.0
-var bounce: float = 100.0
+var bounce: float = 50.0
 var pcount = Global.Players
 
 var loading : PackedScene

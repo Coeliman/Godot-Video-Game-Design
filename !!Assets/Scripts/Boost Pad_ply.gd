@@ -1,5 +1,5 @@
 extends Node
-var bounce:float = 500.0
+var bounce:float = 200.0
 var bounce_pad_direction
 var rotation
 var P1 
