@@ -67,7 +67,7 @@ offset_right = 77.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 2(NF)"
+text = "Level 2"
 expand_icon = true
 
 [node name="Button5" type="Button" parent="."]
@@ -120,6 +120,6 @@ texture = ExtResource("2_6p8uh")
 
 [connection signal="pressed" from="Button" to="." method="platformer_pressed"]
 [connection signal="pressed" from="Button2" to="." method="zerog_pressed"]
-[connection signal="pressed" from="Button3" to="." method="zerog_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button5" to="." method="zerog_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_close_pressed"]
