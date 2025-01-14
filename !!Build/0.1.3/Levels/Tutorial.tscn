@@ -192,27 +192,23 @@ position = Vector2(4258, -1412)
 scale = Vector2(4, 4)
 
 [node name="Player Boost Pad" parent="." instance=ExtResource("8_ihy1w")]
-position = Vector2(3352, 583)
+position = Vector2(3120, 430)
 rotation = -1.5708
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 
 [node name="Death ZOne" parent="." instance=ExtResource("9_kyqoh")]
-position = Vector2(1668, -657)
-scale = Vector2(10, 10)
-
-[node name="Death ZOne2" parent="." instance=ExtResource("9_kyqoh")]
-position = Vector2(1920, -650)
-scale = Vector2(10, 10)
+position = Vector2(1810, -648)
+scale = Vector2(12.05, 10)
 
 [node name="Physics Box" parent="." instance=ExtResource("10_2q6mo")]
 position = Vector2(1211, -1777)
 scale = Vector2(1.5, 1.5)
 
-[node name="Object Boost Pad" parent="." instance=ExtResource("11_xdwao")]
-position = Vector2(1529, -1784)
-
 [node name="Space" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1798, 8.49969)
-scale = Vector2(5.51563, 3.52393)
+position = Vector2(1838, -475)
+scale = Vector2(3.641, 2.326)
 texture = ExtResource("13_e6tlv")
+
+[node name="Object Boost Pad" parent="." instance=ExtResource("11_xdwao")]
+position = Vector2(1667, -1727)
+scale = Vector2(2.5, 2.5)
