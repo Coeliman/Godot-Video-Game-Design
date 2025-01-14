@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dlmgpb2e8f58s"]
+[gd_scene load_steps=24 format=4 uid="uid://dlmgpb2e8f58s"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_3ekrf"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_tp4n8"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://xc3a38jf3ms5" path="res://!!Assets/3D Models/Physics box.tscn" id="9_qr4oq"]
 [ext_resource type="PackedScene" uid="uid://gwkaq6ioyaaw" path="res://!!Assets/3D Models/win zone.tscn" id="10_dffax"]
 [ext_resource type="PackedScene" uid="uid://b771w5fem36v3" path="res://!!Assets/3D Models/death zone.tscn" id="11_75xvl"]
-[ext_resource type="PackedScene" uid="uid://p4wkygpnx02r" path="res://!!Assets/3D Models/object_boost_pad.tscn" id="12_pj8op"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
 shader = ExtResource("2_tp4n8")
@@ -418,8 +417,3 @@ position = Vector2(-604, 199)
 
 [node name="Physics Box4" parent="." instance=ExtResource("9_qr4oq")]
 position = Vector2(918, -999)
-
-[node name="Object Boost Pad" parent="." instance=ExtResource("12_pj8op")]
-position = Vector2(2907, 180)
-rotation = -2.2794
-scale = Vector2(2, 2)
