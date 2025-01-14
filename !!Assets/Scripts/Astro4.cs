@@ -3,7 +3,7 @@ using System;
 
 public partial class Astro4 : CharacterBody2D
 {
-    public const float maxSpeed = 150.0f;
+    public const float maxSpeed = 75.0f;
     public const float accel = 1200.0f;
 
     private const float DragCoefficient = 0.1f;
@@ -117,7 +117,7 @@ public partial class Astro4 : CharacterBody2D
             case 0:
                 origin = rightShoulder.GlobalPosition;
                 bone = rightShoulder;
-                maxAngle = 30;
+                maxAngle = 50;
                 minAngle = -30;
                 break;
 
@@ -125,7 +125,7 @@ public partial class Astro4 : CharacterBody2D
                 origin = leftShoulder.GlobalPosition;
                 bone = leftShoulder;
                 maxAngle = 30;
-                minAngle = -30;
+                minAngle = -50;
                 break;
 
             case 2:

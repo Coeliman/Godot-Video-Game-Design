@@ -116,7 +116,7 @@ public partial class Astro : CharacterBody2D
 			case 0:
 				origin = rightShoulder.GlobalPosition;
 				bone = rightShoulder;
-				maxAngle = 30;
+				maxAngle = 50;
 				minAngle = -30;
 				break;
 
@@ -124,7 +124,7 @@ public partial class Astro : CharacterBody2D
 				origin = leftShoulder.GlobalPosition;
 				bone = leftShoulder;
 				maxAngle = 30;
-				minAngle = -30;
+				minAngle = -50;
 				break;
 
 			case 2:
