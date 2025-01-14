@@ -410,8 +410,32 @@ scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level 1"]
 z_index = -10
-position = Vector2(1085, -31.4998)
-scale = Vector2(2.98535, 2.43799)
+position = Vector2(1085, 1773.5)
+scale = Vector2(2.98535, 0.675294)
+texture = ExtResource("5_cspx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level 1/Sprite2D"]
+z_index = -10
+position = Vector2(7.70429, -2033.93)
+scale = Vector2(-1.452, -0.99)
+texture = ExtResource("5_cspx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level 1/Sprite2D/Sprite2D"]
+z_index = -10
+position = Vector2(82.3581, 2035.78)
+scale = Vector2(-1.452, -0.99)
+texture = ExtResource("5_cspx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level 1/Sprite2D/Sprite2D/Sprite2D"]
+z_index = -10
+position = Vector2(7.70429, -2033.93)
+scale = Vector2(-1.452, -0.99)
+texture = ExtResource("5_cspx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level 1/Sprite2D/Sprite2D/Sprite2D/Sprite2D"]
+z_index = -10
+position = Vector2(95.1415, 1915.08)
+scale = Vector2(-1.452, -0.99)
 texture = ExtResource("5_cspx1")
 
 [node name="Win Zone5" parent="Level 1" instance=ExtResource("9_gvapa")]
