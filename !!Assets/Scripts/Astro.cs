@@ -68,9 +68,25 @@ public partial class Astro : CharacterBody2D
 					velocity.Y = 0.0f;
 				}
 			}
+        }
+
+        KinematicCollision2D collision = MoveAndCollide(velocity * (float)delta);
+
+        if (direction == Vector2.Zero) {
+			if (collision != null)
+			{
+				if (GetPositionDelta().X == Position.X)
+				{
+					velocity.X = 0.0f;
+				}
+				if (GetPositionDelta().Y == Position.Y)
+				{
+					velocity.Y = 0.0f;
+				}
+			}
 		}
 
-		Velocity = velocity;
+        Velocity = velocity;
 		//MoveAndSlide();
 
 		Vector2 dragVector = -velocity * DragCoefficient;
@@ -100,28 +116,28 @@ public partial class Astro : CharacterBody2D
 			case 0:
 				origin = rightShoulder.GlobalPosition;
 				bone = rightShoulder;
-				maxAngle = 70;
-				minAngle = -62;
+				maxAngle = 50;
+				minAngle = -50;
 				break;
 
 			case 1:
 				origin = leftShoulder.GlobalPosition;
 				bone = leftShoulder;
-				maxAngle = 62;
-				minAngle = -70;
+				maxAngle = 50;
+				minAngle = -50;
 				break;
 
 			case 2:
 				origin = rightHip.GlobalPosition;
 				bone = rightHip;
 				maxAngle = 10;
-				minAngle = -70;
+				minAngle = -50;
 				break;
 
 			case 3:
 				origin = leftHip.GlobalPosition;
 				bone = leftHip;
-				maxAngle = 70;
+				maxAngle = 50;
 				minAngle = -10;
 				break;
 		}
