@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dakf200jyd5i8"]
+[gd_scene load_steps=9 format=3 uid="uid://dakf200jyd5i8"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_idqyl"]
 [ext_resource type="Texture2D" uid="uid://0tutrhjhjwse" path="res://!!Assets/Sprites/SpaceBackgroundTest.PNG" id="2_klo27"]
@@ -10,24 +10,6 @@ shader = ExtResource("3_h4rgk")
 shader_parameter/pixel_range = 2.0
 
 [sub_resource type="Environment" id="Environment_w0ntq"]
-
-[sub_resource type="CSharpScript" id="CSharpScript_fw51a"]
-script/source = "using Godot;
-using System;
-
-public partial class Ambient_Properties : WorldEnvironment
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-	
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i1hn2"]
 shader = ExtResource("4_m3e3g")
@@ -57,7 +39,6 @@ grow_vertical = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w0ntq")
-script = SubResource("CSharpScript_fw51a")
 
 [node name="Dim" type="CanvasModulate" parent="WorldEnvironment"]
 visible = false

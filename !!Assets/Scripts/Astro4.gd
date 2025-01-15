@@ -19,6 +19,8 @@ var rightShoulder : Bone2D
 var leftShoulder :Bone2D
 var rightHip:Bone2D
 var leftHip:Bone2D
+var lastposx = null
+var lastposy = null
 
 func _ready() -> void:
 
@@ -58,10 +60,14 @@ func _process(_delta: float) -> void:
 
 	if direction == Vector2.ZERO:
 		if collision != null:
-			if call_deferred("position.x") == position.x:
+			if lastposx == position.x:
 				velo.x = 0
-			if call_deferred("position.y") == position.y:
+			if lastposy == position.y:
 				velo.y = 0
+	lastposx= self.position.x
+	lastposy = self.position.y
+	
+				
 	velocity = velo
 	
 	var dragVector:Vector2 = -velo * drag

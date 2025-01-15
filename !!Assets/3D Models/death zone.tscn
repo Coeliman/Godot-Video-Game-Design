@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b771w5fem36v3"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/death_zone.gd" id="1_qhqmy"]
-[ext_resource type="Texture2D" uid="uid://c25eufsyvsqar" path="res://!!Assets/Sprites/spikes.png" id="2_da1xu"]
+[ext_resource type="Texture2D" uid="uid://bwu2s2orp3lbq" path="res://!!Assets/Sprites/loose wires.png" id="2_op2hg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llklw"]
-size = Vector2(128, 44)
+size = Vector2(128, 20)
 
 [node name="Win Zone" type="Node2D"]
 z_index = 2
@@ -15,7 +15,7 @@ collision_layer = 0
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 43)
+position = Vector2(0, 55)
 shape = SubResource("RectangleShape2D_llklw")
 
 [node name="Center" type="Node2D" parent="Area2D"]
@@ -25,8 +25,8 @@ position = Vector2(50, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-7.62939e-06, 43)
-scale = Vector2(0.335958, 0.314286)
-texture = ExtResource("2_da1xu")
+position = Vector2(3.8147e-06, 39)
+scale = Vector2(0.16, 0.173333)
+texture = ExtResource("2_op2hg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
