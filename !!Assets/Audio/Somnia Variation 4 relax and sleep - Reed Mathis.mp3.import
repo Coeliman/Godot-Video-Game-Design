@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://52ay8c412mc0"
+path="res://.godot/imported/Somnia Variation 4 relax and sleep - Reed Mathis.mp3-42ab4d2c9e5c97386b7a730d61823d09.mp3str"
+
+[deps]
+
+source_file="res://!!Assets/Audio/Somnia Variation 4 relax and sleep - Reed Mathis.mp3"
+dest_files=["res://.godot/imported/Somnia Variation 4 relax and sleep - Reed Mathis.mp3-42ab4d2c9e5c97386b7a730d61823d09.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

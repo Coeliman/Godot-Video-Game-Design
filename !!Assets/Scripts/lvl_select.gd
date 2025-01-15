@@ -25,3 +25,8 @@ func _on_button_3_pressed() -> void: #level2
 	# loads comic, make sure to change it to the comic scene you want
 	var Comic = load("res://!!Build/0.1.3/Menus/Comics/level2comic.tscn").instantiate()
 	get_tree().current_scene.add_child(Comic)
+
+
+func _on_button_5_pressed() -> void: #l3
+	var Comic = load("res://!!Build/0.1.3/Menus/Comics/level3comic.tscn").instantiate()
+	get_tree().current_scene.add_child(Comic)

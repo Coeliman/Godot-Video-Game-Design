@@ -45,6 +45,7 @@ func _process(_delta: float) -> void:
 			velo += direction * v * _delta
 		else:
 			v=maxSpeed
+			print('maxspeed')
 			velo+= direction * v * _delta
 			
 	move_and_slide()

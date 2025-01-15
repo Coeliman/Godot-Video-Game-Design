@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de01b11ouuv5b"
+path="res://.godot/imported/High Tone Thunk.mp3-e138fd6f084354c7d48254f1a78f83ff.mp3str"
+
+[deps]
+
+source_file="res://!!Assets/Audio/High Tone Thunk.mp3"
+dest_files=["res://.godot/imported/High Tone Thunk.mp3-e138fd6f084354c7d48254f1a78f83ff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

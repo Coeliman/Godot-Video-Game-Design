@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpgqghlyycod1"]
+
+[ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_iqx2y"]
+[ext_resource type="Script" path="res://!!Assets/Scripts/Level 3 comic.gd" id="2_fbise"]
+[ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="3_bx1pk"]
+[ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="4_rbmmo"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iqx2y")
+script = ExtResource("2_fbise")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
+position = Vector2(576, 324)
+scale = Vector2(1.111, 1)
+texture = ExtResource("3_bx1pk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(576, 324)
+scale = Vector2(2, 1.8)
+texture = ExtResource("4_rbmmo")
+
+[node name="Continue" type="Button" parent="."]
+z_index = 15
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = 276.0
+offset_right = 411.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTINUE"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.5
+offset_right = 391.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "THIS IS WHERE WE WILL PUT COMICS VERY COOL, IF THIS IS STILL IN GAME DO NOT PUB OR SEND OFF."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

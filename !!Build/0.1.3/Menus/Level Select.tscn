@@ -121,5 +121,5 @@ texture = ExtResource("2_6p8uh")
 [connection signal="pressed" from="Button" to="." method="platformer_pressed"]
 [connection signal="pressed" from="Button2" to="." method="zerog_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Button5" to="." method="zerog_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_close_pressed"]

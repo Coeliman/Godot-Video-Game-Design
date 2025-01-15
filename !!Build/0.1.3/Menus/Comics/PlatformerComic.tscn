@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d60kyansef0o"]
+[gd_scene load_steps=5 format=3 uid="uid://d60kyansef0o"]
 
 [ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_lng4u"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/PlatformerComic.gd" id="2_1kfgn"]
 [ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="3_8e3g0"]
+[ext_resource type="Texture2D" uid="uid://c2xd514i0olgs" path="res://!!Assets/Sprites/Comic 2.png" id="3_j7mc8"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -15,27 +16,36 @@ theme = ExtResource("1_lng4u")
 script = ExtResource("2_1kfgn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -5
+z_index = 15
+position = Vector2(576, 324)
+scale = Vector2(1.111, 1)
+texture = ExtResource("3_j7mc8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 10
 position = Vector2(576, 324)
 scale = Vector2(2, 1.8)
 texture = ExtResource("3_8e3g0")
 
 [node name="Continue" type="Button" parent="."]
+z_index = 20
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -13.5
-offset_right = 43.5
-offset_bottom = 13.5
+offset_left = 324.0
+offset_top = 276.0
+offset_right = 411.0
+offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "CONTINUE"
 
 [node name="Label" type="Label" parent="."]
+visible = false
+z_index = 20
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

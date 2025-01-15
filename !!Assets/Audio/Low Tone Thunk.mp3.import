@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx0kkyoyp44qm"
+path="res://.godot/imported/Low Tone Thunk.mp3-37735cf78c96717957b7a424b094999d.mp3str"
+
+[deps]
+
+source_file="res://!!Assets/Audio/Low Tone Thunk.mp3"
+dest_files=["res://.godot/imported/Low Tone Thunk.mp3-37735cf78c96717957b7a424b094999d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

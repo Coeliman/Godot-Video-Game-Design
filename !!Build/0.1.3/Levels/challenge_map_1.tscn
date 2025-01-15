@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bikpd1f8y3sei"]
+[gd_scene load_steps=26 format=4 uid="uid://bikpd1f8y3sei"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_gflus"]
 [ext_resource type="Texture2D" uid="uid://jsba8ortxgob" path="res://!!Assets/Sprites/Tilemaps/Basic Space Tilemap.png" id="1_lnqek"]
@@ -12,6 +12,7 @@
 [ext_resource type="TileSet" uid="uid://dxkdlfpee8gxj" path="res://!!Assets/Sprites/Tilemaps/Tile Test.tres" id="8_ry6sx"]
 [ext_resource type="PackedScene" uid="uid://b771w5fem36v3" path="res://!!Assets/3D Models/death zone.tscn" id="9_gvapa"]
 [ext_resource type="PackedScene" uid="uid://8xhwo12bpqhm" path="res://!!Assets/Sprites/space animated/Animated Star.tscn" id="12_war2m"]
+[ext_resource type="AudioStream" uid="uid://dd46pbviy6rll" path="res://!!Assets/Audio/Somnia Variation 3 relax and sleep - Reed Mathis.mp3" id="13_ank1e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_muqrw"]
 shader = ExtResource("2_5e1y3")
@@ -465,3 +466,6 @@ position = Vector2(783, 1897)
 
 [node name="AnimatedSprite2D16" parent="Node2D" instance=ExtResource("12_war2m")]
 position = Vector2(1608, 1929)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ank1e")
