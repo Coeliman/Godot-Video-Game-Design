@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_iqx2y"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/Level 3 comic.gd" id="2_fbise"]
-[ext_resource type="Texture2D" uid="uid://bcw31lw6y4a1v" path="res://!!Assets/Sprites/icon.svg" id="3_bx1pk"]
+[ext_resource type="Texture2D" uid="uid://w0k56on71yjy" path="res://!!Assets/Sprites/8-panels-v3-large.png" id="3_m8eb1"]
 [ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="4_rbmmo"]
 
 [node name="Options" type="Control"]
@@ -18,8 +18,8 @@ script = ExtResource("2_fbise")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 20
 position = Vector2(576, 324)
-scale = Vector2(1.111, 1)
-texture = ExtResource("3_bx1pk")
+scale = Vector2(1.122, 1.01)
+texture = ExtResource("3_m8eb1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 10
