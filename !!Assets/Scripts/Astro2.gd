@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var maxSpeed: float = 75.0
-var accel: float = 1200.0
+var maxSpeed: float = 1200.0
+var accel: float = 75.0
 
 var drag: float = 0.1
 var ikDrag: float = 20.0
@@ -56,17 +56,11 @@ func _process(_delta: float) -> void:
 			else:
 				velo.y = 0
 			
-	var collision = move_and_collide(velo * _delta)
+	var collision = get_last_slide_collision()
 
 	if direction == Vector2.ZERO:
 		if collision != null:
-			if lastposx == position.x:
-				velo.x = 0
-			if lastposy == position.y:
-				velo.y = 0
-	lastposx= self.position.x
-	lastposy = self.position.y
-	
+			velo = collision.get_normal() * 75
 				
 	velocity = velo
 	
