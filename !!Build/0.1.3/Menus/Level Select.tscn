@@ -83,7 +83,7 @@ offset_right = 337.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 3(NF)"
+text = "Level 3"
 expand_icon = true
 
 [node name="Button4" type="Button" parent="."]

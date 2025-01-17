@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu3dd341tneds"]
+[gd_scene load_steps=3 format=3 uid="uid://bu3dd341tneds"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/Pause Menu.gd" id="1_1qx60"]
+[ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="2_sy1pa"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -58,6 +59,7 @@ offset_right = -180.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_sy1pa")
 text = "Main Menu"
 
 [node name="Restart Level" type="Button" parent="CanvasLayer"]
@@ -74,6 +76,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_sy1pa")
 text = "Play Again"
 
 [connection signal="pressed" from="CanvasLayer/Main menu" to="." method="_on_main_menu_pressed"]

@@ -33,17 +33,20 @@ script = ExtResource("1_48g3x")
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
 z_index = -10
 layout_mode = 2
+theme = ExtResource("1_d0vum")
 
 [node name="Start" type="Button" parent="VBoxContainer2/VBoxContainer"]
 z_index = -10
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("1_d0vum")
 text = "START"
 
 [node name="Options" type="Button" parent="VBoxContainer2/VBoxContainer"]
 z_index = -10
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("1_d0vum")
 text = "OPTIONS"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

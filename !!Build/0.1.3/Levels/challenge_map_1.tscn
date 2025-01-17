@@ -472,6 +472,7 @@ position = Vector2(1608, 1929)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_ank1e")
 volume_db = -20.0
+autoplay = true
 
 [node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_ae7ey")
