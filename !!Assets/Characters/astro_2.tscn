@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://7rbeuy6co74r"]
+[gd_scene load_steps=21 format=3 uid="uid://7rbeuy6co74r"]
 
 [ext_resource type="Shader" path="res://!!Assets/Shaders/Color_Change.gdshader" id="1_2jcqb"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/Astro2.gd" id="1_dcq77"]
@@ -11,12 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://dt1uk5puhe6is" path="res://!!Assets/Sprites/Astro/Left_Thigh.png" id="8_c5fdg"]
 [ext_resource type="Texture2D" uid="uid://dpjwypmuyt52q" path="res://!!Assets/Sprites/Astro/Right_Leg_Unfinished.png" id="9_sp3da"]
 [ext_resource type="Texture2D" uid="uid://chnqybehdvwlp" path="res://!!Assets/Sprites/Astro/Left_Leg_Unfinished.png" id="10_nmxuh"]
+[ext_resource type="Texture2D" uid="uid://c80ne50kqgtk7" path="res://!!Assets/Sprites/the friggin backpack.png" id="12_u78cl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_27pf0"]
 shader = ExtResource("1_2jcqb")
 shader_parameter/range = 0.125
 shader_parameter/origin = Color(1, 1, 1, 1)
 shader_parameter/new = Color(0.95, 0.2755, 0.2755, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qwb4x"]
+shader = ExtResource("1_2jcqb")
+shader_parameter/range = 0.125
+shader_parameter/origin = Color(1, 1, 1, 1)
+shader_parameter/new = Color(0.94902, 0.27451, 0.27451, 1)
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_q7rxg"]
 target_nodepath = NodePath("../IK Nodes/IKLArm")
@@ -165,6 +172,12 @@ skeleton = NodePath("../../Bones")
 polygon = PackedVector2Array(701.629, 1814.76, 714.904, 1718.04, 737.659, 1678.22, 735.763, 1334.99, 807.822, 1312.24, 931.081, 1321.72, 987.97, 1344.47, 976.592, 1490.49, 957.629, 1731.32, 967.111, 1833.72, 934.874, 1865.96, 800.237, 1873.54, 705.422, 1852.68)
 uv = PackedVector2Array(701.629, 1814.76, 714.904, 1718.04, 737.659, 1678.22, 735.763, 1334.99, 807.822, 1312.24, 931.081, 1321.72, 987.97, 1344.47, 976.592, 1490.49, 957.629, 1731.32, 967.111, 1833.72, 934.874, 1865.96, 800.237, 1873.54, 705.422, 1852.68)
 bones = ["Pelvis", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Chest/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Left_Hip/Left_Knee", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/Right_Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/Right_Hip/Right_Knee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Sprite2D" type="Sprite2D" parent="Character Container/Polygons"]
+z_index = -30
+material = SubResource("ShaderMaterial_qwb4x")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("12_u78cl")
 
 [node name="Bones" type="Skeleton2D" parent="Character Container"]
 rotation = -0.00193102

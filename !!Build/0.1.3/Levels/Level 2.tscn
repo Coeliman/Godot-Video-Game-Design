@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cx4mhbi0lafi4"]
+[gd_scene load_steps=28 format=4 uid="uid://cx4mhbi0lafi4"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_4eo1k"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_alxro"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c7rva5imt04fr" path="res://!!Assets/3D Models/player_boost_pad.tscn" id="10_ca8s3"]
 [ext_resource type="PackedScene" uid="uid://gwkaq6ioyaaw" path="res://!!Assets/3D Models/win zone.tscn" id="11_anjre"]
 [ext_resource type="AudioStream" uid="uid://52ay8c412mc0" path="res://!!Assets/Audio/Somnia Variation 4 relax and sleep - Reed Mathis.mp3" id="12_q55y5"]
+[ext_resource type="AudioStream" uid="uid://1g2tyfaxkndc" path="res://!!Assets/Audio/Jetpack SFX.mp3" id="13_oy3x6"]
 
 [sub_resource type="Environment" id="Environment_eh5d5"]
 
@@ -408,8 +409,9 @@ sources/0 = SubResource("TileSetAtlasSource_t3opd")
 sources/1 = SubResource("TileSetAtlasSource_gplx2")
 sources/2 = SubResource("TileSetAtlasSource_7eg67")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("1_4eo1k")
+audio_player = NodePath("JetpackFX")
 
 [node name="Level 1" type="Node2D" parent="."]
 
@@ -528,9 +530,13 @@ position = Vector2(836, 12)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_q55y5")
+volume_db = -20.0
 autoplay = true
 
 [node name="Player Boost Pad8" parent="." instance=ExtResource("10_ca8s3")]
 position = Vector2(4097, -152)
 rotation = 1.5708
 scale = Vector2(1.62, 1.62)
+
+[node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_oy3x6")

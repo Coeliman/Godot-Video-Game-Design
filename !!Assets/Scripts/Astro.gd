@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var maxSpeed: float = 1200.0
-var accel: float = 75.0
+var accel: float = 100.0
 
 var drag: float = 0.1
 var ikDrag: float = 20.0
