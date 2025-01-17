@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://yxopytirnfet"]
+[gd_scene load_steps=5 format=3 uid="uid://yxopytirnfet"]
 
 [ext_resource type="Theme" uid="uid://071qepx3jte6" path="res://!!Assets/Textures/Main Menu Theme.tres" id="1_av4hh"]
 [ext_resource type="Script" path="res://!!Assets/Scripts/First Time.gd" id="2_kpg4w"]
 [ext_resource type="Texture2D" uid="uid://cwsu1o2v617d" path="res://!!Assets/Sprites/Space Main Menu Background.jpg" id="3_3h31w"]
+[ext_resource type="Theme" uid="uid://d0hwn3f0t82a" path="res://!!Assets/Textures/the main theme but it has labels.tres" id="4_3nbno"]
 
 [node name="First Time" type="Control"]
 layout_mode = 3
@@ -47,7 +48,7 @@ offset_right = 427.5
 offset_bottom = 1.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_av4hh")
+theme = ExtResource("4_3nbno")
 text = "It looks to be your first time playing. Make sure to head into options to choose your keybinds and player count!"
 
 [node name="LvlSlc" type="Button" parent="."]
