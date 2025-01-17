@@ -156,9 +156,27 @@ func _process(_delta: float) -> void:
 		#print("Rope limit hit, bouncing characters")
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("p1_up") or event.is_action_pressed("p2_up") or event.is_action_pressed("p3_up") or event.is_action_pressed("p4_up") or event.is_action_pressed("p1_right") or event.is_action_pressed("p2_right") or event.is_action_pressed("p3_right") or event.is_action_pressed("p4_right") or event.is_action_pressed("p1_left") or event.is_action_pressed("p2_left") or event.is_action_pressed("p3_left") or event.is_action_pressed("p4_left") or event.is_action_pressed("p1_down") or event.is_action_pressed("p2_down") or event.is_action_pressed("p3_down") or event.is_action_pressed("p4_down"):
+	if event.is_action_pressed("p1_up") or event.is_action_pressed("p1_down") or event.is_action_pressed("p1_right") or event.is_action_pressed("p1_left"):
+		if not audio_player.playing:
+			audio_player.play() #1
+	elif event.is_action_released("p1_up") or event.is_action_released("p1_down") or event.is_action_released("p1_right") or event.is_action_released("p1_left"):
+		if not event.is_action_pressed("p1_up") or event.is_action_pressed("p1_down") or event.is_action_pressed("p1_left") or event.is_action_pressed("p1_right") or event.is_action_pressed("p2_up") or event.is_action_pressed("p2_down") or event.is_action_pressed("p2_left") or event.is_action_pressed("p2_right") or event.is_action_pressed("p3_up") or event.is_action_pressed("p3_down") or event.is_action_pressed("p3_left") or event.is_action_pressed("p3_right") or event.is_action_pressed("p4_up") or event.is_action_pressed("p4_down") or event.is_action_pressed("p4_left") or event.is_action_pressed("p4_right"):
+			audio_player.stop()
+	if event.is_action_pressed("p2_up") or event.is_action_pressed("p2_down") or event.is_action_pressed("p2_right") or event.is_action_pressed("p2_left"):
 		if not audio_player.playing:
 			audio_player.play()
-	elif event.is_action_released("p1_up") or event.is_action_released("p2_up") or event.is_action_released("p3_up") or event.is_action_released("p4_up") or event.is_action_released("p1_right") or event.is_action_released("p2_right") or event.is_action_released("p3_right") or event.is_action_released("p4_right") or event.is_action_released("p1_left") or event.is_action_released("p2_left") or event.is_action_released("p3_left") or event.is_action_released("p4_left") or event.is_action_released("p1_down") or event.is_action_released("p2_down") or event.is_action_released("p3_down") or event.is_action_released("p4_down"):
-		if not event.is_action_pressed("p1_up") or event.is_action_pressed("p2_up") or event.is_action_pressed("p3_up") or event.is_action_pressed("p4_up") or event.is_action_pressed("p1_right") or event.is_action_pressed("p2_right") or event.is_action_pressed("p3_right") or event.is_action_pressed("p4_right") or event.is_action_pressed("p1_left") or event.is_action_pressed("p2_left") or event.is_action_pressed("p3_left") or event.is_action_pressed("p4_left") or event.is_action_pressed("p1_down") or event.is_action_pressed("p2_down") or event.is_action_pressed("p3_down") or event.is_action_pressed("p4_down"):
+	elif event.is_action_released("p2_up") or event.is_action_released("p2_down") or event.is_action_released("p2_right") or event.is_action_released("p2_left"):
+		if not event.is_action_pressed("p1_up") or event.is_action_pressed("p1_down") or event.is_action_pressed("p1_left") or event.is_action_pressed("p1_right") or event.is_action_pressed("p2_up") or event.is_action_pressed("p2_down") or event.is_action_pressed("p2_left") or event.is_action_pressed("p2_right") or event.is_action_pressed("p3_up") or event.is_action_pressed("p3_down") or event.is_action_pressed("p3_left") or event.is_action_pressed("p3_right") or event.is_action_pressed("p4_up") or event.is_action_pressed("p4_down") or event.is_action_pressed("p4_left") or event.is_action_pressed("p4_right"):
+			audio_player.stop()
+	if event.is_action_pressed("p3_up") or event.is_action_pressed("p3_down") or event.is_action_pressed("p3_right") or event.is_action_pressed("p3_left"):
+		if not audio_player.playing:
+			audio_player.play()
+	elif event.is_action_released("p3_up") or event.is_action_released("p3_down") or event.is_action_released("p3_right") or event.is_action_released("p3_left"):
+		if not event.is_action_pressed("p1_up") or event.is_action_pressed("p1_down") or event.is_action_pressed("p1_left") or event.is_action_pressed("p1_right") or event.is_action_pressed("p2_up") or event.is_action_pressed("p2_down") or event.is_action_pressed("p2_left") or event.is_action_pressed("p2_right") or event.is_action_pressed("p3_up") or event.is_action_pressed("p3_down") or event.is_action_pressed("p3_left") or event.is_action_pressed("p3_right") or event.is_action_pressed("p4_up") or event.is_action_pressed("p4_down") or event.is_action_pressed("p4_left") or event.is_action_pressed("p4_right"):
+			audio_player.stop()
+	if event.is_action_pressed("p4_up") or event.is_action_pressed("p4_down") or event.is_action_pressed("p4_right") or event.is_action_pressed("p4_left"):
+		if not audio_player.playing:
+			audio_player.play()
+	elif event.is_action_released("p4_up") or event.is_action_released("p4_down") or event.is_action_released("p4_right") or event.is_action_released("p4_left"):
+		if not event.is_action_pressed("p1_up") or event.is_action_pressed("p1_down") or event.is_action_pressed("p1_left") or event.is_action_pressed("p1_right") or event.is_action_pressed("p2_up") or event.is_action_pressed("p2_down") or event.is_action_pressed("p2_left") or event.is_action_pressed("p2_right") or event.is_action_pressed("p3_up") or event.is_action_pressed("p3_down") or event.is_action_pressed("p3_left") or event.is_action_pressed("p3_right") or event.is_action_pressed("p4_up") or event.is_action_pressed("p4_down") or event.is_action_pressed("p4_left") or event.is_action_pressed("p4_right"):
 			audio_player.stop()

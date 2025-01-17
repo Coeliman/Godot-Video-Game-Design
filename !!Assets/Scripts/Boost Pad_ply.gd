@@ -1,5 +1,5 @@
 extends Node
-var bounce:float = 200.0
+var bounce:float = 250.0
 var bounce_pad_direction
 var rotation
 var P1 
@@ -25,21 +25,22 @@ func body_entered(body: Node2D) -> void:
 	P3 = root.get_node("Astro3")
 	P4 = root.get_node("Astro4")
 
+
 	if body.name == "Astro" or body.name == "Astro2" or body.name == "Astro3" or body.name == "Astro4":
 		if rotation != null:
-			if Global.Players ==2:
+			if Global.Players ==2.0:
 				P1.velocity = bounce_pad_direction.rotated(rotation) * bounce #only works for rigidbodies
 				P2.velocity = bounce_pad_direction.rotated(rotation) * bounce 
-			if Global.Players ==3:
+			if Global.Players ==3.0:
 				P3.velocity = bounce_pad_direction.rotated(rotation) * bounce 
-			if Global.Players ==4:
+			if Global.Players ==4.0:
 				P4.velocity = bounce_pad_direction.rotated(rotation) * bounce 
 		else:
-			if Global.Players ==2:
+			if Global.Players ==2.0:
 				P1.velocity = bounce_pad_direction * bounce #only works for rigidbodies
 				P2.velocity = bounce_pad_direction * bounce 
-			if Global.Players ==3:
+			if Global.Players ==3.0:
 				P3.velocity = bounce_pad_direction * bounce 
-			if Global.Players ==4:
+			if Global.Players ==4.0:
 				P4.velocity = bounce_pad_direction * bounce 
 		
