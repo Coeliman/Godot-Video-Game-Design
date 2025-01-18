@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cx4mhbi0lafi4"]
+[gd_scene load_steps=29 format=4 uid="uid://cx4mhbi0lafi4"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_4eo1k"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_alxro"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://gwkaq6ioyaaw" path="res://!!Assets/3D Models/win zone.tscn" id="11_anjre"]
 [ext_resource type="AudioStream" uid="uid://52ay8c412mc0" path="res://!!Assets/Audio/Somnia Variation 4 relax and sleep - Reed Mathis.mp3" id="12_q55y5"]
 [ext_resource type="AudioStream" uid="uid://1g2tyfaxkndc" path="res://!!Assets/Audio/Jetpack SFX.mp3" id="13_oy3x6"]
+[ext_resource type="PackedScene" uid="uid://daw3yor6yx6nw" path="res://!!Assets/Scenes/Character Dictator.tscn" id="14_pulye"]
 
 [sub_resource type="Environment" id="Environment_eh5d5"]
 
@@ -540,3 +541,5 @@ scale = Vector2(1.62, 1.62)
 
 [node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_oy3x6")
+
+[node name="CharacterDictator" parent="." instance=ExtResource("14_pulye")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dlmgpb2e8f58s"]
+[gd_scene load_steps=23 format=4 uid="uid://dlmgpb2e8f58s"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_3ekrf"]
 [ext_resource type="Shader" path="res://!!Assets/Textures/Pixelation.gdshader" id="2_tp4n8"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8xhwo12bpqhm" path="res://!!Assets/Sprites/space animated/Animated Star.tscn" id="11_f6tyx"]
 [ext_resource type="AudioStream" uid="uid://dadscpax8ywcg" path="res://!!Assets/Audio/Galactic Bass - John Patitucci.mp3" id="12_ovgp2"]
 [ext_resource type="AudioStream" uid="uid://1g2tyfaxkndc" path="res://!!Assets/Audio/Jetpack SFX.mp3" id="13_y0gu4"]
+[ext_resource type="PackedScene" uid="uid://daw3yor6yx6nw" path="res://!!Assets/Scenes/Character Dictator.tscn" id="14_y66nf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8irb"]
 shader = ExtResource("2_tp4n8")
@@ -409,3 +410,5 @@ autoplay = true
 
 [node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_y0gu4")
+
+[node name="CharacterDictator" parent="." instance=ExtResource("14_y66nf")]

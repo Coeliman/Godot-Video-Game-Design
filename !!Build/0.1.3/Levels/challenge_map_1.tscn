@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bikpd1f8y3sei"]
+[gd_scene load_steps=28 format=4 uid="uid://bikpd1f8y3sei"]
 
 [ext_resource type="Script" path="res://!!Assets/Scripts/ZeroG_attached.gd" id="1_gflus"]
 [ext_resource type="Texture2D" uid="uid://jsba8ortxgob" path="res://!!Assets/Sprites/Tilemaps/Basic Space Tilemap.png" id="1_lnqek"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://8xhwo12bpqhm" path="res://!!Assets/Sprites/space animated/Animated Star.tscn" id="12_war2m"]
 [ext_resource type="AudioStream" uid="uid://dd46pbviy6rll" path="res://!!Assets/Audio/Somnia Variation 3 relax and sleep - Reed Mathis.mp3" id="13_ank1e"]
 [ext_resource type="AudioStream" uid="uid://1g2tyfaxkndc" path="res://!!Assets/Audio/Jetpack SFX.mp3" id="14_ae7ey"]
+[ext_resource type="PackedScene" uid="uid://daw3yor6yx6nw" path="res://!!Assets/Scenes/Character Dictator.tscn" id="15_t4otx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_muqrw"]
 shader = ExtResource("2_5e1y3")
@@ -476,3 +477,5 @@ autoplay = true
 
 [node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_ae7ey")
+
+[node name="CharacterDictator" parent="." instance=ExtResource("15_t4otx")]
