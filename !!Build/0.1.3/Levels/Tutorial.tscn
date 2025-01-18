@@ -154,6 +154,8 @@ position = Vector2(4545, 1011)
 stream = ExtResource("17_5dtht")
 volume_db = -20.0
 autoplay = true
+max_distance = 1e+07
 
 [node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_ml4pr")
+max_distance = 1e+07

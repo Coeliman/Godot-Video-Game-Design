@@ -407,8 +407,10 @@ position = Vector2(7623, 2302)
 stream = ExtResource("12_ovgp2")
 volume_db = -20.0
 autoplay = true
+max_distance = 1e+07
 
 [node name="JetpackFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_y0gu4")
+max_distance = 1e+07
 
 [node name="CharacterDictator" parent="." instance=ExtResource("14_y66nf")]
